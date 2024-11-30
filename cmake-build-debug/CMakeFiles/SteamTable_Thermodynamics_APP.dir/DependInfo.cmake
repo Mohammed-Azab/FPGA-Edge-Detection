@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/CS Projects/FPGA-Edge-Detection/c++Algo/Main.cpp" "CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj" "gcc" "CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj.d"
+  "D:/CS Projects/FPGA-Edge-Detection/c++/Main.cpp" "CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj" "gcc" "CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

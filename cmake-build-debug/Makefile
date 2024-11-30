@@ -128,29 +128,29 @@ SteamTable_Thermodynamics_APP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SteamTable_Thermodynamics_APP.dir\build.make CMakeFiles/SteamTable_Thermodynamics_APP.dir/build
 .PHONY : SteamTable_Thermodynamics_APP/fast
 
-c++Algo/Main.obj: c++Algo/Main.cpp.obj
-.PHONY : c++Algo/Main.obj
+c++/Main.obj: c++/Main.cpp.obj
+.PHONY : c++/Main.obj
 
 # target to build an object file
-c++Algo/Main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SteamTable_Thermodynamics_APP.dir\build.make CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj
-.PHONY : c++Algo/Main.cpp.obj
+c++/Main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SteamTable_Thermodynamics_APP.dir\build.make CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj
+.PHONY : c++/Main.cpp.obj
 
-c++Algo/Main.i: c++Algo/Main.cpp.i
-.PHONY : c++Algo/Main.i
+c++/Main.i: c++/Main.cpp.i
+.PHONY : c++/Main.i
 
 # target to preprocess a source file
-c++Algo/Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SteamTable_Thermodynamics_APP.dir\build.make CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.i
-.PHONY : c++Algo/Main.cpp.i
+c++/Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SteamTable_Thermodynamics_APP.dir\build.make CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.i
+.PHONY : c++/Main.cpp.i
 
-c++Algo/Main.s: c++Algo/Main.cpp.s
-.PHONY : c++Algo/Main.s
+c++/Main.s: c++/Main.cpp.s
+.PHONY : c++/Main.s
 
 # target to generate assembly for a file
-c++Algo/Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SteamTable_Thermodynamics_APP.dir\build.make CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.s
-.PHONY : c++Algo/Main.cpp.s
+c++/Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SteamTable_Thermodynamics_APP.dir\build.make CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.s
+.PHONY : c++/Main.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... SteamTable_Thermodynamics_APP
-	@echo ... c++Algo/Main.obj
-	@echo ... c++Algo/Main.i
-	@echo ... c++Algo/Main.s
+	@echo ... c++/Main.obj
+	@echo ... c++/Main.i
+	@echo ... c++/Main.s
 .PHONY : help
 
 

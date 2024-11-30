@@ -68,29 +68,29 @@ include CMakeFiles/SteamTable_Thermodynamics_APP.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SteamTable_Thermodynamics_APP.dir/flags.make
 
-CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj: CMakeFiles/SteamTable_Thermodynamics_APP.dir/flags.make
-CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj: CMakeFiles/SteamTable_Thermodynamics_APP.dir/includes_CXX.rsp
-CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj: D:/CS\ Projects/FPGA-Edge-Detection/c++Algo/Main.cpp
-CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj: CMakeFiles/SteamTable_Thermodynamics_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\CS Projects\FPGA-Edge-Detection\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj"
-	"S:\CLion 2024.2.3\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj -MF CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++Algo\Main.cpp.obj.d -o CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++Algo\Main.cpp.obj -c "D:\CS Projects\FPGA-Edge-Detection\c++Algo\Main.cpp"
+CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj: CMakeFiles/SteamTable_Thermodynamics_APP.dir/flags.make
+CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj: CMakeFiles/SteamTable_Thermodynamics_APP.dir/includes_CXX.rsp
+CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj: D:/CS\ Projects/FPGA-Edge-Detection/c++/Main.cpp
+CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj: CMakeFiles/SteamTable_Thermodynamics_APP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\CS Projects\FPGA-Edge-Detection\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj"
+	"S:\CLion 2024.2.3\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj -MF CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++\Main.cpp.obj.d -o CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++\Main.cpp.obj -c "D:\CS Projects\FPGA-Edge-Detection\c++\Main.cpp"
 
-CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.i"
-	"S:\CLion 2024.2.3\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CS Projects\FPGA-Edge-Detection\c++Algo\Main.cpp" > CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++Algo\Main.cpp.i
+CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.i"
+	"S:\CLion 2024.2.3\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CS Projects\FPGA-Edge-Detection\c++\Main.cpp" > CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++\Main.cpp.i
 
-CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.s"
-	"S:\CLion 2024.2.3\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\CS Projects\FPGA-Edge-Detection\c++Algo\Main.cpp" -o CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++Algo\Main.cpp.s
+CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.s"
+	"S:\CLion 2024.2.3\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\CS Projects\FPGA-Edge-Detection\c++\Main.cpp" -o CMakeFiles\SteamTable_Thermodynamics_APP.dir\c++\Main.cpp.s
 
 # Object files for target SteamTable_Thermodynamics_APP
 SteamTable_Thermodynamics_APP_OBJECTS = \
-"CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj"
+"CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj"
 
 # External object files for target SteamTable_Thermodynamics_APP
 SteamTable_Thermodynamics_APP_EXTERNAL_OBJECTS =
 
-SteamTable_Thermodynamics_APP.exe: CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++Algo/Main.cpp.obj
+SteamTable_Thermodynamics_APP.exe: CMakeFiles/SteamTable_Thermodynamics_APP.dir/c++/Main.cpp.obj
 SteamTable_Thermodynamics_APP.exe: CMakeFiles/SteamTable_Thermodynamics_APP.dir/build.make
 SteamTable_Thermodynamics_APP.exe: CMakeFiles/SteamTable_Thermodynamics_APP.dir/linkLibs.rsp
 SteamTable_Thermodynamics_APP.exe: CMakeFiles/SteamTable_Thermodynamics_APP.dir/objects1.rsp
