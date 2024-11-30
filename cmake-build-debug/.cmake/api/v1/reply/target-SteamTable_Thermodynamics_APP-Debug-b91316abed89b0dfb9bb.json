@@ -52,7 +52,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/CS Projects/DSDProject/App"
+					"path" : "D:/CS Projects/FPGA-Edge-Detection/c++Algo"
 				}
 			],
 			"language" : "CXX",
@@ -128,12 +128,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "App/Main.cpp",
+			"path" : "c++Algo/Main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "App/Main.h",
+			"path" : "c++Algo/Main.h",
 			"sourceGroupIndex" : 1
 		},
 		{

@@ -1,0 +1,3 @@
+"S:\CLion 2024.2.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\SteamTable_Thermodynamics_APP.dir/objects.a
+"S:\CLion 2024.2.3\bin\mingw\bin\ar.exe" qc CMakeFiles\SteamTable_Thermodynamics_APP.dir/objects.a @CMakeFiles\SteamTable_Thermodynamics_APP.dir\objects1.rsp
+"S:\CLion 2024.2.3\bin\mingw\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\SteamTable_Thermodynamics_APP.dir/objects.a -Wl,--no-whole-archive -o SteamTable_Thermodynamics_APP.exe -Wl,--out-implib,libSteamTable_Thermodynamics_APP.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SteamTable_Thermodynamics_APP.dir\linkLibs.rsp

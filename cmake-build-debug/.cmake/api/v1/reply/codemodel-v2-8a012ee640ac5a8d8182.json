@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SteamTable_Thermodynamics_APP::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SteamTable_Thermodynamics_APP-Debug-f442d4b451113e83da73.json",
+					"jsonFile" : "target-SteamTable_Thermodynamics_APP-Debug-b91316abed89b0dfb9bb.json",
 					"name" : "SteamTable_Thermodynamics_APP",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/CS Projects/DSDProject/cmake-build-debug",
-		"source" : "D:/CS Projects/DSDProject"
+		"build" : "D:/CS Projects/FPGA-Edge-Detection/cmake-build-debug",
+		"source" : "D:/CS Projects/FPGA-Edge-Detection"
 	},
 	"version" : 
 	{

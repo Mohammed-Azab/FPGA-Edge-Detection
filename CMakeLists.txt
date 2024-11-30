@@ -3,11 +3,11 @@ project(SteamTable_Thermodynamics_APP)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(App)
+include_directories(c++Algo)
 
 add_executable(SteamTable_Thermodynamics_APP
-        App/Main.cpp
-        App/Main.h
+        c++Algo/Main.cpp
+        c++Algo/Main.h
     .gitattributes
     LICENSE
     README.md)
