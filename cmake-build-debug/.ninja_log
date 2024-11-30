@@ -1,0 +1,6 @@
+# ninja log v6
+1373	1764	7547068925821967	SteamTable_Thermodynamics_APP.exe	f0eee35cdc3ba25a
+32	975	7547071485269105	build.ninja	5e5ccb9e31fa54b8
+1	1372	7547068912107315	CMakeFiles/SteamTable_Thermodynamics_APP.dir/App/Main.cpp.obj	bc6432fdadb7bef0
+6	579	7547071597592237	CMakeFiles/SteamTable_Thermodynamics_APP.dir/App/Main.cpp.obj	25b922ae7c7edfef
+579	771	7547071603330388	SteamTable_Thermodynamics_APP.exe	f0eee35cdc3ba25a
