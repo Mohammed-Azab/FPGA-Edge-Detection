@@ -3,14 +3,11 @@
 
 The **Prewitt filter** is a type of edge detection algorithm used in image processing to identify the edges or boundaries in an image. It is named after Judith M. S. Prewitt, who introduced the operator in the context of image processing. The filter highlights regions of the image where intensity changes abruptly, which typically correspond to edges.
 
-## **How It Works**
-The Prewitt filter is a gradient-based method that uses convolution kernels (filters) to compute approximations of the horizontal and vertical derivatives of the image. These derivatives provide information about the intensity gradient in different directions.
+# Mathematical Approach to Applying the Prewitt Filter
 
-The algorithm applies two kernels to the image:
-- **Horizontal Kernel (\(G_x\))** to detect vertical edges.
-- **Vertical Kernel (\(G_y\))** to detect horizontal edges.
+## Define the Prewitt Operator
+The Prewitt filter is a convolution-based edge detection operator that computes the gradient of the image intensity in both the horizontal and vertical directions. It uses two kernels (filters):
 
-### **Prewitt Kernels**
 1. **Horizontal**:
    ```
    G_x =
@@ -26,22 +23,65 @@ The algorithm applies two kernels to the image:
    [ 0  0  0]
    [ 1  1  1]
    ```
+These kernels represent the gradient calculation in the horizontal and vertical directions.
 
-The image is convolved with each kernel to compute the gradients in the respective directions (\(G_x\) and \(G_y\)).
+## Apply the Convolution
+Convolution is the process of applying the filter to each pixel in the image matrix. Since you’re dealing with a 10x10 image matrix, you apply these kernels over the image by sliding them over each 3x3 region of the matrix, starting from the top-left corner and moving pixel by pixel.
 
-### **Edge Magnitude and Direction**
-Once \(G_x\) and \(G_y\) are computed, the edge magnitude and direction can be calculated:
+For each pixel at position \((i, j)\), the Prewitt filter computes two values: one for the horizontal gradient \(G_x\) and one for the vertical gradient \(G_y\).
 
-- **Magnitude**: 
-  ```
-  M = sqrt(G_x^2 + G_y^2)
-  ```
-  (Often approximated as \( M = |G_x| + |G_y| \) for simplicity in digital implementations.)
+To compute the value for \(G_x\) and \(G_y\) at each pixel, you multiply the corresponding values in the kernel with the values in the image matrix and sum the results.
+
+### For \(G_x\) (horizontal gradient):
+
+$$
+G_x(i, j) = \sum_{k=-1}^{1} \sum_{l=-1}^{1} I(i+k, j+l) \cdot G_x(k+1, l+1)
+$$
+
+Where \(I(i+k, j+l)\) represents the pixel values in the image matrix, and \(G_x(k+1, l+1)\) corresponds to the elements of the kernel.
+
+### Similarly, for \(G_y\) (vertical gradient):
+
+$$
+G_y(i, j) = \sum_{k=-1}^{1} \sum_{l=-1}^{1} I(i+k, j+l) \cdot G_y(k+1, l+1)
+$$
+
+## Compute the Magnitude of the Gradient
+Once the gradients in both directions are calculated for each pixel, the overall gradient magnitude \(G(i,j)\) is calculated by combining the horizontal and vertical gradients using the following formula:
+
+$$
+M(i, j) = \sqrt{G_x(i, j)^2 + G_y(i, j)^2}
+$$
+
+This gives you the magnitude of the gradient at each pixel, which corresponds to the strength of the edge at that point.
+
+## Thresholding
+To identify the edges in the image, you can apply a threshold to the gradient magnitude. If \(G(i,j)\) exceeds a certain threshold value, the pixel is considered part of an edge. Otherwise, it is considered as part of the background. The thresholding step helps in distinguishing strong edges from weaker noise.
+
+$$
+\text{Edge}(i, j) = 
+\begin{cases} 
+1 & \text{if } G(i, j) > T \\
+0 & \text{if } G(i, j) \leq T
+\end{cases}
+$$
+
+Where \(T\) is the chosen threshold value.
+
+## Result
+After applying the Prewitt filter and thresholding, you will have a binary matrix representing the detected edges. The edges will be marked with a value of 1 (or 255 in a grayscale image), and the non-edges will be 0.
+
+## Line Detection
+After detecting the edges, you can analyze the binary matrix to find the start and end coordinates of the detected line. A simple way to do this would be to iterate through the matrix and find the first and last pixel positions that are part of the edge (value 1). These coordinates correspond to the start and end of the detected line.
+
+### **Edge Direction**
+The edge direction can be calculated:
 
 - **Direction**:
-  ```
-  θ = arctan(G_y / G_x)
-  ```
+  
+$$
+\theta(i, j) = \arctan\left(\frac{G_y(i, j)}{G_x(i, j)}\right)
+$$
 
 ## **Applications**
 1. **Edge Detection**: Identifying object boundaries in images.
