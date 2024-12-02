@@ -1,5 +1,5 @@
 Flow report for FPGA_Edge_Detection
-Mon Dec 02 15:53:53 2024
+Mon Dec 02 16:43:28 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,25 +41,25 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Dec 02 15:53:53 2024       ;
+; Flow Status                     ; Successful - Mon Dec 02 16:43:28 2024       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; FPGA_Edge_Detection                         ;
 ; Top-level Entity Name           ; FPGA_Edge_Detection                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1 / 32,070 ( < 1 % )                        ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 18 / 457 ( 4 % )                            ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 2                                           ;
+; Total pins                      ; 38                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/02/2024 15:51:13 ;
+; Start date & time ; 12/02/2024 16:43:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FPGA_Edge_Detection ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                        ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +----------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                  ; 1099030664707.173315107301132          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                  ; 1099030664707.173315419919788          ; --            ; --          ; --                                ;
 ; EDA_BOARD_DESIGN_SIGNAL_INTEGRITY_TOOL ; IBIS (Signal Integrity)                ; <None>        ; --          ; --                                ;
 ; EDA_BOARD_DESIGN_SYMBOL_TOOL           ; ViewDraw (Symbol)                      ; <None>        ; --          ; --                                ;
 ; EDA_BOARD_DESIGN_TIMING_TOOL           ; Stamp (Timing)                         ; <None>        ; --          ; --                                ;
@@ -110,12 +110,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4849 MB             ; 00:00:21                           ;
-; Fitter               ; 00:00:35     ; 1.0                     ; 7799 MB             ; 00:02:12                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4844 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 5262 MB             ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:01:37     ; 1.0                     ; 5014 MB             ; 00:01:32                           ;
-; Total                ; 00:02:32     ; --                      ; --                  ; 00:04:15                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4922 MB             ; 00:00:16                           ;
+; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:16                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -125,10 +121,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; WinXps           ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; WinXps           ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; WinXps           ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; WinXps           ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; WinXps           ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -136,10 +128,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off FPGA_Edge_Detection -c FPGA_Edge_Detection
-quartus_fit --read_settings_files=off --write_settings_files=off FPGA_Edge_Detection -c FPGA_Edge_Detection
-quartus_asm --read_settings_files=off --write_settings_files=off FPGA_Edge_Detection -c FPGA_Edge_Detection
-quartus_sta FPGA_Edge_Detection -c FPGA_Edge_Detection
-quartus_eda --read_settings_files=off --write_settings_files=off FPGA_Edge_Detection -c FPGA_Edge_Detection
 
 
 

@@ -2,7 +2,40 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "segmentsL_i2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsL_i2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsL_i2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsL_i3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsL_i3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsL_i3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

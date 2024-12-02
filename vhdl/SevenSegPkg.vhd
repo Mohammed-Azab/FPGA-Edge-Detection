@@ -25,3 +25,4 @@ package body SevenSegPkg is
         end case;
     end function;
 end SevenSegPkg;
+
