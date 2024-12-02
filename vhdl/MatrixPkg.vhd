@@ -1,5 +1,4 @@
 library STD;
-use STD_LOGIC.ALL;
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -37,4 +36,4 @@ constant Gy : Prewitte_Filter := (
 
 
 
-end MatrixPkg 
+end MatrixPkg;
