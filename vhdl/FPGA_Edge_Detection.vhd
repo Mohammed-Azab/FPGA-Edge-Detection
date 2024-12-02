@@ -127,6 +127,11 @@ begin
                 end loop;
             end loop;
         end if;
+		  i0 := 3;
+        i1 := 4;
+		  i2 := 7;
+        i3 := 9;
+		  
 
         -- Convert integers to BCD for 7-segment display
         i0_signal <= int_to_bcd(i0);
