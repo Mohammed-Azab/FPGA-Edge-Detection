@@ -20,6 +20,25 @@ architecture STRUCT of FPGA_Edge_Detection is
     -- Matrix and filter variables from MatrixPkg
     signal processed_signal : STD_LOGIC_VECTOR(7 downto 0);
     signal edge_matrix : ImageMatrix;
+	 
+	 
+	 -- Function to compute the threshold value (mean of the matrix)
+    function compute_threshold(my_matrix: ImageMatrix) return integer is
+        variable sum : integer := 0;
+        variable mean : integer := 1;
+    begin
+        -- Sum all the values in the image matrix
+        for i in 0 to 9 loop 
+            for j in 0 to 9 loop
+                sum := sum + my_matrix(i, j);  -- Assuming my_matrix contains the image data
+            end loop;
+        end loop;
+
+        -- Compute the mean (threshold)
+        mean := sum / 100;  -- Assuming a 10x10 matrix (100 elements in total)
+        return mean;
+    end function;
+
 
     -- Function to compute gradient magnitude
     function compute_edge(x: integer; y: integer; T: integer) return integer is
@@ -66,7 +85,7 @@ begin
                 end loop;
            end loop;
             -- Calculate the threshold value
-            T := 50;
+            T := compute_threshold(my_matrix);
 
             -- Iterate over the image matrix to apply edge detection
             for i in 1 to 8 loop  -- count number = no of Rows of the image -  no of rows of Gx + 1
