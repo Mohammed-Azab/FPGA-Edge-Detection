@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_Edge_Detection
-Mon Dec 02 15:24:02 2024
+Mon Dec 02 15:45:03 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,13 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +40,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Dec 02 15:24:02 2024           ;
-; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name               ; FPGA_Edge_Detection                         ;
-; Top-level Entity Name       ; FPGA_Edge_Detection                         ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Dec 02 15:45:03 2024       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; FPGA_Edge_Detection                         ;
+; Top-level Entity Name           ; FPGA_Edge_Detection                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 18                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -155,13 +166,99 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; FPGA_Edge_Detection.vhd          ; yes             ; User VHDL File  ; D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd ;         ;
+; MatrixPkg.vhd                    ; yes             ; User VHDL File  ; D:/CS Projects/FPGA-Edge-Detection/vhdl/MatrixPkg.vhd           ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 18    ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 18    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
+; |FPGA_Edge_Detection       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 18   ; 0            ; |FPGA_Edge_Detection ; FPGA_Edge_Detection ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 18                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Dec 02 15:23:54 2024
+    Info: Processing started: Mon Dec 02 15:44:55 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_Edge_Detection -c FPGA_Edge_Detection
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -171,19 +268,48 @@ Info (12021): Found 2 design units, including 1 entities, in source file fulladd
 Info (12021): Found 2 design units, including 1 entities, in source file xor_2.vhd
     Info (12022): Found design unit 1: xor_test-behavior File: D:/CS Projects/FPGA-Edge-Detection/vhdl/xor_2.vhd Line: 11
     Info (12023): Found entity 1: xor_test File: D:/CS Projects/FPGA-Edge-Detection/vhdl/xor_2.vhd Line: 4
-Error (10500): VHDL syntax error at FPGA_Edge_Detection.vhd(26) near text ")";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 26
-Error (10549): VHDL Subprogram Declaration error at FPGA_Edge_Detection.vhd(28): object class for formal parameter of function cannot be variable File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 28
-Error (10500): VHDL syntax error at FPGA_Edge_Detection.vhd(29) near text "begin";  expecting an identifier ("begin" is a reserved keyword), or "constant", or "file", or "signal", or "variable" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 29
-Error (10500): VHDL syntax error at FPGA_Edge_Detection.vhd(83) near text ")";  expecting "(", or an identifier, or  unary operator File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 83
-Info (12021): Found 0 design units, including 0 entities, in source file fpga_edge_detection.vhd
-Info (12021): Found 1 design units, including 0 entities, in source file sevensegpkg.vhd
-    Info (12022): Found design unit 1: SevenSegPkg-body File: D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegPkg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fpga_edge_detection.vhd
+    Info (12022): Found design unit 1: FPGA_Edge_Detection-STRUCT File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 18
+    Info (12023): Found entity 1: FPGA_Edge_Detection File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 9
 Info (12021): Found 1 design units, including 0 entities, in source file matrixpkg.vhd
     Info (12022): Found design unit 1: MatrixPkg File: D:/CS Projects/FPGA-Edge-Detection/vhdl/MatrixPkg.vhd Line: 7
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
-    Error: Peak virtual memory: 4831 megabytes
-    Error: Processing ended: Mon Dec 02 15:24:02 2024
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:19
+Info (12021): Found 2 design units, including 1 entities, in source file sqrt_function.vhd
+    Info (12022): Found design unit 1: sqrt_function-Behavioral File: D:/CS Projects/FPGA-Edge-Detection/vhdl/sqrt_function.vhd Line: 11
+    Info (12023): Found entity 1: sqrt_function File: D:/CS Projects/FPGA-Edge-Detection/vhdl/sqrt_function.vhd Line: 6
+Info (12127): Elaborating entity "FPGA_Edge_Detection" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at FPGA_Edge_Detection.vhd(14): used implicit default value for signal "output_signal" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+Warning (10036): Verilog HDL or VHDL warning at FPGA_Edge_Detection.vhd(22): object "edge_matrix" assigned a value but never read File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 22
+Warning (10542): VHDL Variable Declaration warning at math_real_vhdl1993.vhd(2373): used initial value expression for variable "RECIPROCAL" because variable was never assigned a value File: c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/1993/math_real_vhdl1993.vhd Line: 2373
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "edge_matrix" into its bus
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "output_signal[0]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+    Warning (13410): Pin "output_signal[1]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+    Warning (13410): Pin "output_signal[2]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+    Warning (13410): Pin "output_signal[3]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+    Warning (13410): Pin "output_signal[4]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+    Warning (13410): Pin "output_signal[5]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+    Warning (13410): Pin "output_signal[6]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+    Warning (13410): Pin "output_signal[7]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 11
+    Warning (15610): No output dependent on input pin "reset" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_signal[0]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (15610): No output dependent on input pin "input_signal[1]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (15610): No output dependent on input pin "input_signal[2]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (15610): No output dependent on input pin "input_signal[3]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (15610): No output dependent on input pin "input_signal[4]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (15610): No output dependent on input pin "input_signal[5]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (15610): No output dependent on input pin "input_signal[6]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (15610): No output dependent on input pin "input_signal[7]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 8 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Mon Dec 02 15:45:03 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:20
 
 
