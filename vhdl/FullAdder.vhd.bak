@@ -1,0 +1,8 @@
+library STD;
+use STD.STANDARD.all;
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity FullAdder is 
+port (A,B,C: in STD_LOGIC)

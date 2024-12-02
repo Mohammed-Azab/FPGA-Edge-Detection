@@ -1,0 +1,3 @@
+entity FPGA_Edge_Detection is
+    -- Port declarations
+end FPGA_Edge_Detection;

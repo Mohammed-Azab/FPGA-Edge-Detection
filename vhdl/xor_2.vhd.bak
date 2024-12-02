@@ -1,0 +1,19 @@
+library STD;
+use STD.STANDARD.all;
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity xor_2 is 
+    port (
+        A, B : in STD_LOGIC;
+        z : out STD_LOGIC
+    );
+end xor_2;
+
+architecture STRUCT of xor_2 is
+    
+    
+begin
+    z <= A xor B;
+end STRUCT;
