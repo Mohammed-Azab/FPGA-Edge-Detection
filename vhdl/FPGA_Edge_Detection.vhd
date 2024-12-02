@@ -83,7 +83,7 @@ begin
             T := compute_Threshold();  -- Call the function to compute the threshold
 
             -- Iterate over the image matrix to apply edge detection
-            for i in 1 to 8 loop  -- count number = # of Rows of the image - # of rows of Gx + 1
+            for i in 1 to 8 loop  -- count number = no of Rows of the image -  no of rows of Gx + 1
                 for j in 1 to 8 loop
                     edge_matrix(i, j) := compute_edge(i, j, T);  -- Apply edge detection using the computed threshold
                 end loop;
