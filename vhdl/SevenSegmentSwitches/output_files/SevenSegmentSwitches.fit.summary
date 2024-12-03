@@ -1,4 +1,4 @@
-Fitter Status : Successful - Tue Dec 03 22:47:29 2024
+Fitter Status : Successful - Tue Dec 03 23:22:19 2024
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : SevenSegmentSwitches
 Top-level Entity Name : SevenSegmentSwitches
@@ -9,7 +9,7 @@ Total logic elements : 8 / 49,760 ( < 1 % )
     Total combinational functions : 8 / 49,760 ( < 1 % )
     Dedicated logic registers : 0 / 49,760 ( 0 % )
 Total registers : 0
-Total pins : 11 / 360 ( 3 % )
+Total pins : 46 / 360 ( 13 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
