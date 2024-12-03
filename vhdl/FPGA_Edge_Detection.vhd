@@ -8,34 +8,29 @@ use work.MatrixPkg.ALL;         -- Include the package with the matrix definitio
 
 entity FPGA_Edge_Detection is
     port (
-        clk : in STD_LOGIC;             -- Clock input
+        clk : in STD_LOGIC;             -- Clock input 
         reset : in STD_LOGIC;           -- Reset input
-        input_signal : in STD_LOGIC_VECTOR(7 downto 0);  -- Input signal
-        segmentsL_i0 : out STD_LOGIC_VECTOR(6 downto 0);  -- 7-segment for i0
-        segmentsL_i1 : out STD_LOGIC_VECTOR(6 downto 0);  -- 7-segment for i1
-        segmentsL_i2 : out STD_LOGIC_VECTOR(6 downto 0);  -- 7-segment for i2
-        segmentsL_i3 : out STD_LOGIC_VECTOR(6 downto 0)   -- 7-segment for i3
+        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0)  -- 7-segment displays as output
     );
 end FPGA_Edge_Detection;
 
 architecture STRUCT of FPGA_Edge_Detection is
 
     -- Matrix and filter variables from MatrixPkg
-    signal processed_signal : STD_LOGIC_VECTOR(7 downto 0);
     signal edge_matrix : ImageMatrix;
     
-    -- BCD signals for the 7-segment display
-    signal i0_signal, i1_signal, i2_signal, i3_signal : STD_LOGIC_VECTOR(3 downto 0); -- BCD signals
+    -- signals for the 7-segment display
+    signal i0, i1, i2, i3 : integer; 
 
     -- Function to compute the threshold value (mean of the matrix)
     function compute_threshold(my_matrix: ImageMatrix) return integer is
         variable sum : integer := 0;
         variable mean : integer := 1;
     begin
-        -- Sum all the values in the image matrix
+        
         for i in 0 to 9 loop 
             for j in 0 to 9 loop
-                sum := sum + my_matrix(i, j);  -- Assuming my_matrix contains the image data
+                sum := sum + my_matrix(i, j);  
             end loop;
         end loop;
 
@@ -69,11 +64,6 @@ architecture STRUCT of FPGA_Edge_Detection is
         end if;
     end function;
 
-    -- Convert integer to STD_LOGIC_VECTOR (4 bits for BCD representation)
-    function int_to_bcd(val : integer) return STD_LOGIC_VECTOR is
-    begin
-        return STD_LOGIC_VECTOR(to_unsigned(val, 4));
-    end function;
 
 begin
 
@@ -89,6 +79,17 @@ begin
                     edge_matrix(i, j) <= 0;
                 end loop;
             end loop;
+				i0 := 0;
+				i1 := 0;
+				i2 := 0;
+				i3 := 0;
+				HEX0 <= "1111111";
+				HEX1 <= "1111111";
+				HEX2 <= "1111111";
+				HEX3 <= "1111111";
+				HEX4 <= "1111111";
+				HEX5 <= "1111111";
+				
         elsif rising_edge(clk) then
             for i in 0 to 9 loop
                 for j in 0 to 9 loop
@@ -133,37 +134,8 @@ begin
         i3 := 9;
 		  
 
-        -- Convert integers to BCD for 7-segment display
-        i0_signal <= int_to_bcd(i0);
-        i1_signal <= int_to_bcd(i1);
-        i2_signal <= int_to_bcd(i2);
-        i3_signal <= int_to_bcd(i3);
-
     end process;
 
-    -- Instantiate 7-segment controllers
-    SevenSeg_i0 : entity work.SevenSegmentController
-        port map(
-            digit => i0_signal,
-            segments => segmentsL_i0
-        );
-
-    SevenSeg_i1 : entity work.SevenSegmentController
-        port map(
-            digit => i1_signal,
-            segments => segmentsL_i1
-        );
-
-    SevenSeg_i2 : entity work.SevenSegmentController
-        port map(
-            digit => i2_signal,
-            segments => segmentsL_i2
-        );
-
-    SevenSeg_i3 : entity work.SevenSegmentController
-        port map(
-            digit => i3_signal,
-            segments => segmentsL_i3
-        );
+   
 
 end STRUCT;

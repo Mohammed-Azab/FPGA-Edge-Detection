@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Mon Dec 02 18:07:27 2024
+Analysis & Synthesis Status : Successful - Wed Dec 04 00:05:28 2024
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : FPGA_Edge_Detection
 Top-level Entity Name : FPGA_Edge_Detection
@@ -7,7 +7,7 @@ Total logic elements : 0
     Total combinational functions : 0
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 38
+Total pins : 44
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

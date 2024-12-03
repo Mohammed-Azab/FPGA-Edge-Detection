@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "12/02/2024 18:07:40"
+-- DATE "12/04/2024 00:05:45"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -90,53 +90,60 @@ ENTITY 	FPGA_Edge_Detection IS
     PORT (
 	clk : IN std_logic;
 	reset : IN std_logic;
-	input_signal : IN std_logic_vector(7 DOWNTO 0);
-	segmentsL_i0 : OUT std_logic_vector(6 DOWNTO 0);
-	segmentsL_i1 : OUT std_logic_vector(6 DOWNTO 0);
-	segmentsL_i2 : OUT std_logic_vector(6 DOWNTO 0);
-	segmentsL_i3 : OUT std_logic_vector(6 DOWNTO 0)
+	HEX0 : OUT std_logic_vector(6 DOWNTO 0);
+	HEX1 : OUT std_logic_vector(6 DOWNTO 0);
+	HEX2 : OUT std_logic_vector(6 DOWNTO 0);
+	HEX3 : OUT std_logic_vector(6 DOWNTO 0);
+	HEX4 : OUT std_logic_vector(6 DOWNTO 0);
+	HEX5 : OUT std_logic_vector(6 DOWNTO 0)
 	);
 END FPGA_Edge_Detection;
 
 -- Design Ports Information
--- clk	=>  Location: PIN_W12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- reset	=>  Location: PIN_Y2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[0]	=>  Location: PIN_Y4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[1]	=>  Location: PIN_H14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[2]	=>  Location: PIN_AB10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[3]	=>  Location: PIN_R1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[4]	=>  Location: PIN_N9,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[5]	=>  Location: PIN_W13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[6]	=>  Location: PIN_V5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- input_signal[7]	=>  Location: PIN_M22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i0[0]	=>  Location: PIN_B3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i0[1]	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i0[2]	=>  Location: PIN_L9,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i0[3]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i0[4]	=>  Location: PIN_V8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i0[5]	=>  Location: PIN_L8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i0[6]	=>  Location: PIN_D22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i1[0]	=>  Location: PIN_A6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i1[1]	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i1[2]	=>  Location: PIN_Y17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i1[3]	=>  Location: PIN_P10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i1[4]	=>  Location: PIN_E10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i1[5]	=>  Location: PIN_W6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i1[6]	=>  Location: PIN_C9,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i2[0]	=>  Location: PIN_E18,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i2[1]	=>  Location: PIN_A20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i2[2]	=>  Location: PIN_W7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i2[3]	=>  Location: PIN_W3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i2[4]	=>  Location: PIN_AB17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i2[5]	=>  Location: PIN_Y22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i2[6]	=>  Location: PIN_R12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i3[0]	=>  Location: PIN_Y8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i3[1]	=>  Location: PIN_A11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i3[2]	=>  Location: PIN_AA3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i3[3]	=>  Location: PIN_E11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i3[4]	=>  Location: PIN_AA11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i3[5]	=>  Location: PIN_E4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- segmentsL_i3[6]	=>  Location: PIN_E21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clk	=>  Location: PIN_T19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- reset	=>  Location: PIN_B8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[0]	=>  Location: PIN_C14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[1]	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[2]	=>  Location: PIN_C15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[3]	=>  Location: PIN_C16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[4]	=>  Location: PIN_E16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[5]	=>  Location: PIN_D17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[6]	=>  Location: PIN_C17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX1[0]	=>  Location: PIN_C18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX1[1]	=>  Location: PIN_D18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX1[2]	=>  Location: PIN_E18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX1[3]	=>  Location: PIN_B16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX1[4]	=>  Location: PIN_A17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX1[5]	=>  Location: PIN_A18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX1[6]	=>  Location: PIN_B17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX2[0]	=>  Location: PIN_B20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX2[1]	=>  Location: PIN_A20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX2[2]	=>  Location: PIN_B19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX2[3]	=>  Location: PIN_A21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX2[4]	=>  Location: PIN_B21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX2[5]	=>  Location: PIN_C22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX2[6]	=>  Location: PIN_B22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX3[0]	=>  Location: PIN_F21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX3[1]	=>  Location: PIN_E22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX3[2]	=>  Location: PIN_E21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX3[3]	=>  Location: PIN_C19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX3[4]	=>  Location: PIN_C20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX3[5]	=>  Location: PIN_D19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX3[6]	=>  Location: PIN_E17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[0]	=>  Location: PIN_F18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[1]	=>  Location: PIN_E20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[2]	=>  Location: PIN_E19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[3]	=>  Location: PIN_J18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[4]	=>  Location: PIN_H19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[5]	=>  Location: PIN_F19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[6]	=>  Location: PIN_F20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[0]	=>  Location: PIN_J20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[1]	=>  Location: PIN_K20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[2]	=>  Location: PIN_L18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[3]	=>  Location: PIN_N18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[4]	=>  Location: PIN_M20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[5]	=>  Location: PIN_N19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[6]	=>  Location: PIN_N20,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF FPGA_Edge_Detection IS
@@ -151,55 +158,62 @@ SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_clk : std_logic;
 SIGNAL ww_reset : std_logic;
-SIGNAL ww_input_signal : std_logic_vector(7 DOWNTO 0);
-SIGNAL ww_segmentsL_i0 : std_logic_vector(6 DOWNTO 0);
-SIGNAL ww_segmentsL_i1 : std_logic_vector(6 DOWNTO 0);
-SIGNAL ww_segmentsL_i2 : std_logic_vector(6 DOWNTO 0);
-SIGNAL ww_segmentsL_i3 : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_HEX0 : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_HEX1 : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_HEX2 : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_HEX3 : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_HEX4 : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_HEX5 : std_logic_vector(6 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
-SIGNAL \input_signal[0]~input_o\ : std_logic;
-SIGNAL \input_signal[1]~input_o\ : std_logic;
-SIGNAL \input_signal[2]~input_o\ : std_logic;
-SIGNAL \input_signal[3]~input_o\ : std_logic;
-SIGNAL \input_signal[4]~input_o\ : std_logic;
-SIGNAL \input_signal[5]~input_o\ : std_logic;
-SIGNAL \input_signal[6]~input_o\ : std_logic;
-SIGNAL \input_signal[7]~input_o\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC2~~eoc\ : std_logic;
-SIGNAL \segmentsL_i0[0]~output_o\ : std_logic;
-SIGNAL \segmentsL_i0[1]~output_o\ : std_logic;
-SIGNAL \segmentsL_i0[2]~output_o\ : std_logic;
-SIGNAL \segmentsL_i0[3]~output_o\ : std_logic;
-SIGNAL \segmentsL_i0[4]~output_o\ : std_logic;
-SIGNAL \segmentsL_i0[5]~output_o\ : std_logic;
-SIGNAL \segmentsL_i0[6]~output_o\ : std_logic;
-SIGNAL \segmentsL_i1[0]~output_o\ : std_logic;
-SIGNAL \segmentsL_i1[1]~output_o\ : std_logic;
-SIGNAL \segmentsL_i1[2]~output_o\ : std_logic;
-SIGNAL \segmentsL_i1[3]~output_o\ : std_logic;
-SIGNAL \segmentsL_i1[4]~output_o\ : std_logic;
-SIGNAL \segmentsL_i1[5]~output_o\ : std_logic;
-SIGNAL \segmentsL_i1[6]~output_o\ : std_logic;
-SIGNAL \segmentsL_i2[0]~output_o\ : std_logic;
-SIGNAL \segmentsL_i2[1]~output_o\ : std_logic;
-SIGNAL \segmentsL_i2[2]~output_o\ : std_logic;
-SIGNAL \segmentsL_i2[3]~output_o\ : std_logic;
-SIGNAL \segmentsL_i2[4]~output_o\ : std_logic;
-SIGNAL \segmentsL_i2[5]~output_o\ : std_logic;
-SIGNAL \segmentsL_i2[6]~output_o\ : std_logic;
-SIGNAL \segmentsL_i3[0]~output_o\ : std_logic;
-SIGNAL \segmentsL_i3[1]~output_o\ : std_logic;
-SIGNAL \segmentsL_i3[2]~output_o\ : std_logic;
-SIGNAL \segmentsL_i3[3]~output_o\ : std_logic;
-SIGNAL \segmentsL_i3[4]~output_o\ : std_logic;
-SIGNAL \segmentsL_i3[5]~output_o\ : std_logic;
-SIGNAL \segmentsL_i3[6]~output_o\ : std_logic;
+SIGNAL \HEX0[0]~output_o\ : std_logic;
+SIGNAL \HEX0[1]~output_o\ : std_logic;
+SIGNAL \HEX0[2]~output_o\ : std_logic;
+SIGNAL \HEX0[3]~output_o\ : std_logic;
+SIGNAL \HEX0[4]~output_o\ : std_logic;
+SIGNAL \HEX0[5]~output_o\ : std_logic;
+SIGNAL \HEX0[6]~output_o\ : std_logic;
+SIGNAL \HEX1[0]~output_o\ : std_logic;
+SIGNAL \HEX1[1]~output_o\ : std_logic;
+SIGNAL \HEX1[2]~output_o\ : std_logic;
+SIGNAL \HEX1[3]~output_o\ : std_logic;
+SIGNAL \HEX1[4]~output_o\ : std_logic;
+SIGNAL \HEX1[5]~output_o\ : std_logic;
+SIGNAL \HEX1[6]~output_o\ : std_logic;
+SIGNAL \HEX2[0]~output_o\ : std_logic;
+SIGNAL \HEX2[1]~output_o\ : std_logic;
+SIGNAL \HEX2[2]~output_o\ : std_logic;
+SIGNAL \HEX2[3]~output_o\ : std_logic;
+SIGNAL \HEX2[4]~output_o\ : std_logic;
+SIGNAL \HEX2[5]~output_o\ : std_logic;
+SIGNAL \HEX2[6]~output_o\ : std_logic;
+SIGNAL \HEX3[0]~output_o\ : std_logic;
+SIGNAL \HEX3[1]~output_o\ : std_logic;
+SIGNAL \HEX3[2]~output_o\ : std_logic;
+SIGNAL \HEX3[3]~output_o\ : std_logic;
+SIGNAL \HEX3[4]~output_o\ : std_logic;
+SIGNAL \HEX3[5]~output_o\ : std_logic;
+SIGNAL \HEX3[6]~output_o\ : std_logic;
+SIGNAL \HEX4[0]~output_o\ : std_logic;
+SIGNAL \HEX4[1]~output_o\ : std_logic;
+SIGNAL \HEX4[2]~output_o\ : std_logic;
+SIGNAL \HEX4[3]~output_o\ : std_logic;
+SIGNAL \HEX4[4]~output_o\ : std_logic;
+SIGNAL \HEX4[5]~output_o\ : std_logic;
+SIGNAL \HEX4[6]~output_o\ : std_logic;
+SIGNAL \HEX5[0]~output_o\ : std_logic;
+SIGNAL \HEX5[1]~output_o\ : std_logic;
+SIGNAL \HEX5[2]~output_o\ : std_logic;
+SIGNAL \HEX5[3]~output_o\ : std_logic;
+SIGNAL \HEX5[4]~output_o\ : std_logic;
+SIGNAL \HEX5[5]~output_o\ : std_logic;
+SIGNAL \HEX5[6]~output_o\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -212,11 +226,12 @@ BEGIN
 
 ww_clk <= clk;
 ww_reset <= reset;
-ww_input_signal <= input_signal;
-segmentsL_i0 <= ww_segmentsL_i0;
-segmentsL_i1 <= ww_segmentsL_i1;
-segmentsL_i2 <= ww_segmentsL_i2;
-segmentsL_i3 <= ww_segmentsL_i3;
+HEX0 <= ww_HEX0;
+HEX1 <= ww_HEX1;
+HEX2 <= ww_HEX2;
+HEX3 <= ww_HEX3;
+HEX4 <= ww_HEX4;
+HEX5 <= ww_HEX5;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -243,8 +258,8 @@ GENERIC MAP (
 PORT MAP (
 	combout => \~QUARTUS_CREATED_GND~I_combout\);
 
--- Location: IOOBUF_X26_Y39_N16
-\segmentsL_i0[0]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X58_Y54_N16
+\HEX0[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -253,34 +268,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i0[0]~output_o\);
+	o => \HEX0[0]~output_o\);
 
--- Location: IOOBUF_X51_Y54_N2
-\segmentsL_i0[1]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i0[1]~output_o\);
-
--- Location: IOOBUF_X0_Y27_N23
-\segmentsL_i0[2]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i0[2]~output_o\);
-
--- Location: IOOBUF_X46_Y54_N9
-\segmentsL_i0[3]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X74_Y54_N9
+\HEX0[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -289,10 +280,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i0[3]~output_o\);
+	o => \HEX0[1]~output_o\);
 
--- Location: IOOBUF_X20_Y0_N16
-\segmentsL_i0[4]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X60_Y54_N2
+\HEX0[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -301,10 +292,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i0[4]~output_o\);
+	o => \HEX0[2]~output_o\);
 
--- Location: IOOBUF_X0_Y27_N16
-\segmentsL_i0[5]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X62_Y54_N30
+\HEX0[3]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -313,10 +304,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i0[5]~output_o\);
+	o => \HEX0[3]~output_o\);
 
--- Location: IOOBUF_X78_Y35_N9
-\segmentsL_i0[6]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X74_Y54_N2
+\HEX0[4]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -325,10 +316,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i0[6]~output_o\);
+	o => \HEX0[4]~output_o\);
 
--- Location: IOOBUF_X34_Y39_N30
-\segmentsL_i1[0]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X74_Y54_N16
+\HEX0[5]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -337,10 +328,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i1[0]~output_o\);
+	o => \HEX0[5]~output_o\);
 
--- Location: IOOBUF_X0_Y27_N2
-\segmentsL_i1[1]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X74_Y54_N23
+\HEX0[6]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -349,34 +340,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i1[1]~output_o\);
+	o => \HEX0[6]~output_o\);
 
--- Location: IOOBUF_X58_Y0_N23
-\segmentsL_i1[2]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i1[2]~output_o\);
-
--- Location: IOOBUF_X26_Y0_N9
-\segmentsL_i1[3]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i1[3]~output_o\);
-
--- Location: IOOBUF_X36_Y39_N23
-\segmentsL_i1[4]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X69_Y54_N23
+\HEX1[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -385,10 +352,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i1[4]~output_o\);
+	o => \HEX1[0]~output_o\);
 
--- Location: IOOBUF_X16_Y0_N30
-\segmentsL_i1[5]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X78_Y49_N9
+\HEX1[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -397,70 +364,82 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i1[5]~output_o\);
-
--- Location: IOOBUF_X46_Y54_N16
-\segmentsL_i1[6]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i1[6]~output_o\);
+	o => \HEX1[1]~output_o\);
 
 -- Location: IOOBUF_X78_Y49_N2
-\segmentsL_i2[0]~output\ : fiftyfivenm_io_obuf
+\HEX1[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i2[0]~output_o\);
+	o => \HEX1[2]~output_o\);
+
+-- Location: IOOBUF_X60_Y54_N9
+\HEX1[3]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX1[3]~output_o\);
+
+-- Location: IOOBUF_X64_Y54_N2
+\HEX1[4]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX1[4]~output_o\);
+
+-- Location: IOOBUF_X66_Y54_N30
+\HEX1[5]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX1[5]~output_o\);
+
+-- Location: IOOBUF_X69_Y54_N30
+\HEX1[6]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX1[6]~output_o\);
+
+-- Location: IOOBUF_X78_Y44_N9
+\HEX2[0]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX2[0]~output_o\);
 
 -- Location: IOOBUF_X66_Y54_N2
-\segmentsL_i2[1]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i2[1]~output_o\);
-
--- Location: IOOBUF_X24_Y0_N9
-\segmentsL_i2[2]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i2[2]~output_o\);
-
--- Location: IOOBUF_X18_Y0_N9
-\segmentsL_i2[3]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i2[3]~output_o\);
-
--- Location: IOOBUF_X69_Y0_N23
-\segmentsL_i2[4]~output\ : fiftyfivenm_io_obuf
+\HEX2[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -469,10 +448,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i2[4]~output_o\);
+	o => \HEX2[1]~output_o\);
 
--- Location: IOOBUF_X78_Y15_N9
-\segmentsL_i2[5]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X69_Y54_N16
+\HEX2[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -481,10 +460,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i2[5]~output_o\);
+	o => \HEX2[2]~output_o\);
 
--- Location: IOOBUF_X38_Y0_N2
-\segmentsL_i2[6]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X78_Y44_N2
+\HEX2[3]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -493,10 +472,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i2[6]~output_o\);
+	o => \HEX2[3]~output_o\);
 
--- Location: IOOBUF_X20_Y0_N2
-\segmentsL_i3[0]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X78_Y43_N2
+\HEX2[4]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -505,10 +484,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i3[0]~output_o\);
+	o => \HEX2[4]~output_o\);
 
--- Location: IOOBUF_X51_Y54_N9
-\segmentsL_i3[1]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X78_Y35_N2
+\HEX2[5]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -517,22 +496,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i3[1]~output_o\);
+	o => \HEX2[5]~output_o\);
 
--- Location: IOOBUF_X26_Y0_N30
-\segmentsL_i3[2]~output\ : fiftyfivenm_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \segmentsL_i3[2]~output_o\);
-
--- Location: IOOBUF_X36_Y39_N16
-\segmentsL_i3[3]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X78_Y43_N9
+\HEX2[6]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -541,10 +508,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i3[3]~output_o\);
+	o => \HEX2[6]~output_o\);
 
--- Location: IOOBUF_X40_Y0_N9
-\segmentsL_i3[4]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X78_Y35_N23
+\HEX3[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -553,10 +520,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i3[4]~output_o\);
+	o => \HEX3[0]~output_o\);
 
--- Location: IOOBUF_X0_Y37_N2
-\segmentsL_i3[5]~output\ : fiftyfivenm_io_obuf
+-- Location: IOOBUF_X78_Y33_N9
+\HEX3[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -565,10 +532,10 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i3[5]~output_o\);
+	o => \HEX3[1]~output_o\);
 
 -- Location: IOOBUF_X78_Y33_N2
-\segmentsL_i3[6]~output\ : fiftyfivenm_io_obuf
+\HEX3[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -577,9 +544,225 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => \segmentsL_i3[6]~output_o\);
+	o => \HEX3[2]~output_o\);
 
--- Location: IOIBUF_X46_Y0_N8
+-- Location: IOOBUF_X69_Y54_N9
+\HEX3[3]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX3[3]~output_o\);
+
+-- Location: IOOBUF_X78_Y41_N9
+\HEX3[4]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX3[4]~output_o\);
+
+-- Location: IOOBUF_X78_Y41_N2
+\HEX3[5]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX3[5]~output_o\);
+
+-- Location: IOOBUF_X78_Y43_N16
+\HEX3[6]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX3[6]~output_o\);
+
+-- Location: IOOBUF_X78_Y40_N16
+\HEX4[0]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX4[0]~output_o\);
+
+-- Location: IOOBUF_X78_Y40_N2
+\HEX4[1]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX4[1]~output_o\);
+
+-- Location: IOOBUF_X78_Y40_N23
+\HEX4[2]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX4[2]~output_o\);
+
+-- Location: IOOBUF_X78_Y42_N16
+\HEX4[3]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX4[3]~output_o\);
+
+-- Location: IOOBUF_X78_Y45_N23
+\HEX4[4]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX4[4]~output_o\);
+
+-- Location: IOOBUF_X78_Y40_N9
+\HEX4[5]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX4[5]~output_o\);
+
+-- Location: IOOBUF_X78_Y35_N16
+\HEX4[6]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX4[6]~output_o\);
+
+-- Location: IOOBUF_X78_Y45_N9
+\HEX5[0]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX5[0]~output_o\);
+
+-- Location: IOOBUF_X78_Y42_N2
+\HEX5[1]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX5[1]~output_o\);
+
+-- Location: IOOBUF_X78_Y37_N16
+\HEX5[2]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX5[2]~output_o\);
+
+-- Location: IOOBUF_X78_Y34_N24
+\HEX5[3]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX5[3]~output_o\);
+
+-- Location: IOOBUF_X78_Y34_N9
+\HEX5[4]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX5[4]~output_o\);
+
+-- Location: IOOBUF_X78_Y34_N16
+\HEX5[5]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX5[5]~output_o\);
+
+-- Location: IOOBUF_X78_Y34_N2
+\HEX5[6]~output\ : fiftyfivenm_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \HEX5[6]~output_o\);
+
+-- Location: IOIBUF_X78_Y20_N23
 \clk~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -591,7 +774,7 @@ PORT MAP (
 	i => ww_clk,
 	o => \clk~input_o\);
 
--- Location: IOIBUF_X16_Y0_N15
+-- Location: IOIBUF_X46_Y54_N29
 \reset~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -602,102 +785,6 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_reset,
 	o => \reset~input_o\);
-
--- Location: IOIBUF_X24_Y0_N15
-\input_signal[0]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(0),
-	o => \input_signal[0]~input_o\);
-
--- Location: IOIBUF_X60_Y54_N22
-\input_signal[1]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(1),
-	o => \input_signal[1]~input_o\);
-
--- Location: IOIBUF_X38_Y0_N15
-\input_signal[2]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(2),
-	o => \input_signal[2]~input_o\);
-
--- Location: IOIBUF_X0_Y3_N1
-\input_signal[3]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(3),
-	o => \input_signal[3]~input_o\);
-
--- Location: IOIBUF_X0_Y13_N22
-\input_signal[4]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(4),
-	o => \input_signal[4]~input_o\);
-
--- Location: IOIBUF_X46_Y0_N1
-\input_signal[5]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(5),
-	o => \input_signal[5]~input_o\);
-
--- Location: IOIBUF_X14_Y0_N8
-\input_signal[6]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(6),
-	o => \input_signal[6]~input_o\);
-
--- Location: IOIBUF_X78_Y25_N1
-\input_signal[7]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_input_signal(7),
-	o => \input_signal[7]~input_o\);
 
 -- Location: UNVM_X0_Y40_N40
 \~QUARTUS_CREATED_UNVM~\ : fiftyfivenm_unvm
@@ -770,61 +857,89 @@ PORT MAP (
 	chsel => \~QUARTUS_CREATED_ADC2~_CHSEL_bus\,
 	eoc => \~QUARTUS_CREATED_ADC2~~eoc\);
 
-ww_segmentsL_i0(0) <= \segmentsL_i0[0]~output_o\;
+ww_HEX0(0) <= \HEX0[0]~output_o\;
 
-ww_segmentsL_i0(1) <= \segmentsL_i0[1]~output_o\;
+ww_HEX0(1) <= \HEX0[1]~output_o\;
 
-ww_segmentsL_i0(2) <= \segmentsL_i0[2]~output_o\;
+ww_HEX0(2) <= \HEX0[2]~output_o\;
 
-ww_segmentsL_i0(3) <= \segmentsL_i0[3]~output_o\;
+ww_HEX0(3) <= \HEX0[3]~output_o\;
 
-ww_segmentsL_i0(4) <= \segmentsL_i0[4]~output_o\;
+ww_HEX0(4) <= \HEX0[4]~output_o\;
 
-ww_segmentsL_i0(5) <= \segmentsL_i0[5]~output_o\;
+ww_HEX0(5) <= \HEX0[5]~output_o\;
 
-ww_segmentsL_i0(6) <= \segmentsL_i0[6]~output_o\;
+ww_HEX0(6) <= \HEX0[6]~output_o\;
 
-ww_segmentsL_i1(0) <= \segmentsL_i1[0]~output_o\;
+ww_HEX1(0) <= \HEX1[0]~output_o\;
 
-ww_segmentsL_i1(1) <= \segmentsL_i1[1]~output_o\;
+ww_HEX1(1) <= \HEX1[1]~output_o\;
 
-ww_segmentsL_i1(2) <= \segmentsL_i1[2]~output_o\;
+ww_HEX1(2) <= \HEX1[2]~output_o\;
 
-ww_segmentsL_i1(3) <= \segmentsL_i1[3]~output_o\;
+ww_HEX1(3) <= \HEX1[3]~output_o\;
 
-ww_segmentsL_i1(4) <= \segmentsL_i1[4]~output_o\;
+ww_HEX1(4) <= \HEX1[4]~output_o\;
 
-ww_segmentsL_i1(5) <= \segmentsL_i1[5]~output_o\;
+ww_HEX1(5) <= \HEX1[5]~output_o\;
 
-ww_segmentsL_i1(6) <= \segmentsL_i1[6]~output_o\;
+ww_HEX1(6) <= \HEX1[6]~output_o\;
 
-ww_segmentsL_i2(0) <= \segmentsL_i2[0]~output_o\;
+ww_HEX2(0) <= \HEX2[0]~output_o\;
 
-ww_segmentsL_i2(1) <= \segmentsL_i2[1]~output_o\;
+ww_HEX2(1) <= \HEX2[1]~output_o\;
 
-ww_segmentsL_i2(2) <= \segmentsL_i2[2]~output_o\;
+ww_HEX2(2) <= \HEX2[2]~output_o\;
 
-ww_segmentsL_i2(3) <= \segmentsL_i2[3]~output_o\;
+ww_HEX2(3) <= \HEX2[3]~output_o\;
 
-ww_segmentsL_i2(4) <= \segmentsL_i2[4]~output_o\;
+ww_HEX2(4) <= \HEX2[4]~output_o\;
 
-ww_segmentsL_i2(5) <= \segmentsL_i2[5]~output_o\;
+ww_HEX2(5) <= \HEX2[5]~output_o\;
 
-ww_segmentsL_i2(6) <= \segmentsL_i2[6]~output_o\;
+ww_HEX2(6) <= \HEX2[6]~output_o\;
 
-ww_segmentsL_i3(0) <= \segmentsL_i3[0]~output_o\;
+ww_HEX3(0) <= \HEX3[0]~output_o\;
 
-ww_segmentsL_i3(1) <= \segmentsL_i3[1]~output_o\;
+ww_HEX3(1) <= \HEX3[1]~output_o\;
 
-ww_segmentsL_i3(2) <= \segmentsL_i3[2]~output_o\;
+ww_HEX3(2) <= \HEX3[2]~output_o\;
 
-ww_segmentsL_i3(3) <= \segmentsL_i3[3]~output_o\;
+ww_HEX3(3) <= \HEX3[3]~output_o\;
 
-ww_segmentsL_i3(4) <= \segmentsL_i3[4]~output_o\;
+ww_HEX3(4) <= \HEX3[4]~output_o\;
 
-ww_segmentsL_i3(5) <= \segmentsL_i3[5]~output_o\;
+ww_HEX3(5) <= \HEX3[5]~output_o\;
 
-ww_segmentsL_i3(6) <= \segmentsL_i3[6]~output_o\;
+ww_HEX3(6) <= \HEX3[6]~output_o\;
+
+ww_HEX4(0) <= \HEX4[0]~output_o\;
+
+ww_HEX4(1) <= \HEX4[1]~output_o\;
+
+ww_HEX4(2) <= \HEX4[2]~output_o\;
+
+ww_HEX4(3) <= \HEX4[3]~output_o\;
+
+ww_HEX4(4) <= \HEX4[4]~output_o\;
+
+ww_HEX4(5) <= \HEX4[5]~output_o\;
+
+ww_HEX4(6) <= \HEX4[6]~output_o\;
+
+ww_HEX5(0) <= \HEX5[0]~output_o\;
+
+ww_HEX5(1) <= \HEX5[1]~output_o\;
+
+ww_HEX5(2) <= \HEX5[2]~output_o\;
+
+ww_HEX5(3) <= \HEX5[3]~output_o\;
+
+ww_HEX5(4) <= \HEX5[4]~output_o\;
+
+ww_HEX5(5) <= \HEX5[5]~output_o\;
+
+ww_HEX5(6) <= \HEX5[6]~output_o\;
 END structure;
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_Edge_Detection
-Mon Dec 02 18:07:27 2024
+Wed Dec 04 00:05:28 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,13 +14,9 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "SevenSegmentController:SevenSeg_i3"
- 10. Port Connectivity Checks: "SevenSegmentController:SevenSeg_i2"
- 11. Port Connectivity Checks: "SevenSegmentController:SevenSeg_i1"
- 12. Port Connectivity Checks: "SevenSegmentController:SevenSeg_i0"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -47,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 02 18:07:27 2024       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 04 00:05:28 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FPGA_Edge_Detection                         ;
 ; Top-level Entity Name              ; FPGA_Edge_Detection                         ;
@@ -56,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 0                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 38                                          ;
+; Total pins                         ; 44                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -168,15 +164,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; FPGA_Edge_Detection.vhd          ; yes             ; User VHDL File  ; D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd    ;         ;
-; MatrixPkg.vhd                    ; yes             ; User VHDL File  ; D:/CS Projects/FPGA-Edge-Detection/vhdl/MatrixPkg.vhd              ;         ;
-; SevenSegmentController.vhd       ; yes             ; User VHDL File  ; D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentController.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; FPGA_Edge_Detection.vhd          ; yes             ; User VHDL File  ; D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd ;         ;
+; MatrixPkg.vhd                    ; yes             ; User VHDL File  ; D:/CS Projects/FPGA-Edge-Detection/vhdl/MatrixPkg.vhd           ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -199,13 +194,13 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 38    ;
+; I/O pins                                    ; 44    ;
 ;                                             ;       ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ;                                             ;       ;
 ; Maximum fan-out node                        ; clk   ;
 ; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 38    ;
+; Total fan-out                               ; 44    ;
 ; Average fan-out                             ; 0.50  ;
 +---------------------------------------------+-------+
 
@@ -215,7 +210,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
-; |FPGA_Edge_Detection       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 38   ; 0            ; 0          ; |FPGA_Edge_Detection ; FPGA_Edge_Detection ; work         ;
+; |FPGA_Edge_Detection       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |FPGA_Edge_Detection ; FPGA_Edge_Detection ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -235,57 +230,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "SevenSegmentController:SevenSeg_i3" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; digit[2..1] ; Input ; Info     ; Stuck at GND                  ;
-; digit[3]    ; Input ; Info     ; Stuck at VCC                  ;
-; digit[0]    ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "SevenSegmentController:SevenSeg_i2" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; digit[2..0] ; Input ; Info     ; Stuck at VCC                  ;
-; digit[3]    ; Input ; Info     ; Stuck at GND                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "SevenSegmentController:SevenSeg_i1" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; digit[1..0] ; Input ; Info     ; Stuck at GND                  ;
-; digit[3]    ; Input ; Info     ; Stuck at GND                  ;
-; digit[2]    ; Input ; Info     ; Stuck at VCC                  ;
-+-------------+-------+----------+-------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "SevenSegmentController:SevenSeg_i0" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; digit[1..0] ; Input ; Info     ; Stuck at VCC                  ;
-; digit[3..2] ; Input ; Info     ; Stuck at GND                  ;
-+-------------+-------+----------+-------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 38                          ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
-;         0 data inputs ; 2                           ;
+; boundary_port         ; 44                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 0.00                        ;
 ; Average LUT depth     ; 0.00                        ;
@@ -307,18 +260,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Dec 02 18:07:20 2024
+    Info: Processing started: Wed Dec 04 00:05:19 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_Edge_Detection -c FPGA_Edge_Detection
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file fulladder.vhd
-    Info (12022): Found design unit 1: FullAdder-STRUCT File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FullAdder.vhd Line: 14
-    Info (12023): Found entity 1: FullAdder File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FullAdder.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file xor_2.vhd
-    Info (12022): Found design unit 1: xor_test-behavior File: D:/CS Projects/FPGA-Edge-Detection/vhdl/xor_2.vhd Line: 11
-    Info (12023): Found entity 1: xor_test File: D:/CS Projects/FPGA-Edge-Detection/vhdl/xor_2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fpga_edge_detection.vhd
-    Info (12022): Found design unit 1: FPGA_Edge_Detection-STRUCT File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 21
+    Info (12022): Found design unit 1: FPGA_Edge_Detection-STRUCT File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
     Info (12023): Found entity 1: FPGA_Edge_Detection File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 9
 Info (12021): Found 1 design units, including 0 entities, in source file matrixpkg.vhd
     Info (12022): Found design unit 1: MatrixPkg File: D:/CS Projects/FPGA-Edge-Detection/vhdl/MatrixPkg.vhd Line: 7
@@ -328,59 +275,119 @@ Info (12021): Found 2 design units, including 1 entities, in source file sqrt_fu
 Info (12021): Found 2 design units, including 1 entities, in source file sevensegmentcontroller.vhd
     Info (12022): Found design unit 1: SevenSegmentController-Behavioral File: D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentController.vhd Line: 12
     Info (12023): Found entity 1: SevenSegmentController File: D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentController.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file sevensegmentoutput.vhd
+    Info (12022): Found design unit 1: SevenSegmentOutput-Behavioral File: D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentOutput.vhd Line: 14
+    Info (12023): Found entity 1: SevenSegmentOutput File: D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentOutput.vhd Line: 7
 Info (12127): Elaborating entity "FPGA_Edge_Detection" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at FPGA_Edge_Detection.vhd(73): object "i0" assigned a value but never read File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 73
+Warning (10036): Verilog HDL or VHDL warning at FPGA_Edge_Detection.vhd(73): object "i1" assigned a value but never read File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 73
+Warning (10036): Verilog HDL or VHDL warning at FPGA_Edge_Detection.vhd(73): object "i2" assigned a value but never read File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 73
+Warning (10036): Verilog HDL or VHDL warning at FPGA_Edge_Detection.vhd(73): object "i3" assigned a value but never read File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 73
 Warning (10542): VHDL Variable Declaration warning at math_real_vhdl1993.vhd(2373): used initial value expression for variable "RECIPROCAL" because variable was never assigned a value File: c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/1993/math_real_vhdl1993.vhd Line: 2373
+Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(71): inferring latch(es) for signal or variable "HEX0", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(71): inferring latch(es) for signal or variable "HEX1", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(71): inferring latch(es) for signal or variable "HEX2", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(71): inferring latch(es) for signal or variable "HEX3", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(71): inferring latch(es) for signal or variable "HEX4", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(71): inferring latch(es) for signal or variable "HEX5", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX5[0]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX5[1]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX5[2]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX5[3]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX5[4]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX5[5]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX5[6]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX4[0]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX4[1]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX4[2]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX4[3]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX4[4]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX4[5]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX4[6]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX3[0]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX3[1]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX3[2]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX3[3]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX3[4]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX3[5]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX3[6]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX2[0]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX2[1]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX2[2]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX2[3]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX2[4]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX2[5]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX2[6]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX1[0]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX1[1]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX1[2]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX1[3]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX1[4]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX1[5]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX1[6]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX0[0]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX0[1]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX0[2]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX0[3]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX0[4]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX0[5]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+Info (10041): Inferred latch for "HEX0[6]" at FPGA_Edge_Detection.vhd(71) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "edge_matrix" into its bus
-Info (12128): Elaborating entity "SevenSegmentController" for hierarchy "SevenSegmentController:SevenSeg_i0" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 145
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "segmentsL_i0[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
-    Warning (13410): Pin "segmentsL_i0[1]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
-    Warning (13410): Pin "segmentsL_i0[2]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
-    Warning (13410): Pin "segmentsL_i0[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
-    Warning (13410): Pin "segmentsL_i0[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
-    Warning (13410): Pin "segmentsL_i0[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
-    Warning (13410): Pin "segmentsL_i0[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 14
-    Warning (13410): Pin "segmentsL_i1[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 15
-    Warning (13410): Pin "segmentsL_i1[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 15
-    Warning (13410): Pin "segmentsL_i1[2]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 15
-    Warning (13410): Pin "segmentsL_i1[3]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 15
-    Warning (13410): Pin "segmentsL_i1[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 15
-    Warning (13410): Pin "segmentsL_i1[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 15
-    Warning (13410): Pin "segmentsL_i1[6]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 15
-    Warning (13410): Pin "segmentsL_i2[0]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 16
-    Warning (13410): Pin "segmentsL_i2[1]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 16
-    Warning (13410): Pin "segmentsL_i2[2]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 16
-    Warning (13410): Pin "segmentsL_i2[3]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 16
-    Warning (13410): Pin "segmentsL_i2[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 16
-    Warning (13410): Pin "segmentsL_i2[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 16
-    Warning (13410): Pin "segmentsL_i2[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 16
-    Warning (13410): Pin "segmentsL_i3[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
-    Warning (13410): Pin "segmentsL_i3[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
-    Warning (13410): Pin "segmentsL_i3[2]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
-    Warning (13410): Pin "segmentsL_i3[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
-    Warning (13410): Pin "segmentsL_i3[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
-    Warning (13410): Pin "segmentsL_i3[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
-    Warning (13410): Pin "segmentsL_i3[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 17
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 71
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "clk" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 11
     Warning (15610): No output dependent on input pin "reset" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 12
-    Warning (15610): No output dependent on input pin "input_signal[0]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (15610): No output dependent on input pin "input_signal[1]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (15610): No output dependent on input pin "input_signal[2]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (15610): No output dependent on input pin "input_signal[3]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (15610): No output dependent on input pin "input_signal[4]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (15610): No output dependent on input pin "input_signal[5]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (15610): No output dependent on input pin "input_signal[6]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (15610): No output dependent on input pin "input_signal[7]" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 28 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 4782 megabytes
-    Info: Processing ended: Mon Dec 02 18:07:27 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 42 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Wed Dec 04 00:05:28 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
 
 
