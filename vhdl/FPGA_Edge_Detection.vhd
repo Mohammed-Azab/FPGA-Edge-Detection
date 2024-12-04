@@ -97,27 +97,19 @@ begin
 
     -- Edge detection process
     process(enable, reset)
-			--variable firstTime : boolean := true;
+			variable firstTime : boolean := true;
     begin
-        if reset = '0' then -- clear the output if reset is on
-            for i in 0 to 9 loop
-                for j in 0 to 9 loop
-                    edge_matrix(i, j) <= 0;
-                end loop;
-            end loop;
-				i0 <= 11;
-				i1 <= 11;
-				i2 <= 11;
-				i3 <= 11;
-				
-        elsif enable = '1' then
-            for i in 0 to 9 loop
-                for j in 0 to 9 loop
-                    edge_matrix(i, j) <= 0;
-                end loop;
-            end loop;
+	 
+			 
+		  i0 <= 11;
+		  i1 <= 11;
+		  i2 <= 11;
+		  i3 <= 11;
+        if enable = '1' then
+            
             -- Calculate the threshold value
-            T <= compute_threshold(my_matrix);
+            --T <= compute_threshold(my_matrix);
+				T <= 138;
 
             for i in 0 to 7 loop  -- count number = no of Rows of the image - no of rows of Gx + 1
                 for j in 0 to 7 loop
@@ -133,9 +125,12 @@ begin
             for i in 0 to 7 loop
                 for j in 0 to 7 loop
                     if (i0 = 11) then
+									i0 <= 1;
+									i1 <= 2;
                         if (edge_matrix(i, j) = 1) then
                             i0 <= i;
                             i1 <= j;
+									 firstTime := false;
                         end if;
                     else  
 								if (edge_matrix(i, j) = 1) then
