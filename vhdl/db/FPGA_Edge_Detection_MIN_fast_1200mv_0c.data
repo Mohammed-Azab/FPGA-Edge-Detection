@@ -3,6 +3,342 @@
 
 TIMINGDATA
 
+ARCDATA
+pos_enable__HEX0[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.085");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.085");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.370");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.370");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.201");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.201");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.234");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.234");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.613");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.613");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.374");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.374");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.481");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.481");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.227");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.227");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.367");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.367");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.362");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.362");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.071");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.071");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.166");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.166");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.133");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.133");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.201");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.201");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.557");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.557");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.571");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.571");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.568");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.568");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.668");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.668");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.831");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.831");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.371");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.371");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.860");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.860");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.922");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.922");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.778");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.778");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.776");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.776");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.960");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.960");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.805");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.805");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.755");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.755");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.784");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.784");
+}
+
+ENDARCDATA
+
 ENDTIMINGDATA
 
 ENDMODELDATA

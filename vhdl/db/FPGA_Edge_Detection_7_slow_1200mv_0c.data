@@ -3,6 +3,342 @@
 
 TIMINGDATA
 
+ARCDATA
+pos_enable__HEX0[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.464");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.464");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.077");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.077");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.754");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.754");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.736");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.736");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.301");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.301");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.171");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.171");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX0[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.275");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.275");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.729");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.729");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.061");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.061");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.047");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.047");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.411");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.411");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.441");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.441");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.602");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.602");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX1[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.719");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.719");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.434");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.434");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.491");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.491");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.492");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.492");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.721");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.721");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.955");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.955");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.490");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.490");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX4[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("11.070");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("11.070");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.435");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.435");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.139");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.139");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.135");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.135");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.509");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.509");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.333");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.333");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.459");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.459");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_enable__HEX5[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.503");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.503");
+}
+
+ENDARCDATA
+
 ENDTIMINGDATA
 
 ENDMODELDATA

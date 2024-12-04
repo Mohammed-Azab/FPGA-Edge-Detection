@@ -26,7 +26,6 @@ architecture Behavioral of SevenSegmentOutput is
             when 7 => return "1111000"; -- 7 
             when 8 => return "0000000"; -- 8
             when 9 => return "0010000"; -- 9
-				when 11 => return "1111111";--blank
             when others => return "1111111"; -- Turn off the display for invalid input
         end case;
     end function;

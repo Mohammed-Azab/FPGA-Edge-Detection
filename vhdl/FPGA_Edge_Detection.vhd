@@ -22,6 +22,11 @@ architecture STRUCT of FPGA_Edge_Detection is
     -- signals for the 7-segment display
     signal i0, i1, i2, i3 : integer; 
 	 
+	 --signal F : integer := 0;  -- Flag
+
+	 signal T : integer := 0;  -- Threshold
+
+	 
 	 component SevenSegmentOutput is
     Port (
         i0, i1, i2, i3 : in integer;
@@ -92,8 +97,7 @@ begin
 
     -- Edge detection process
     process(enable, reset)
-        variable T : integer := 0;  -- Declare T variable inside the process
-        variable F : integer := 0;
+			--variable firstTime : boolean := true;
     begin
         if reset = '0' then -- clear the output if reset is on
             for i in 0 to 9 loop
@@ -113,9 +117,8 @@ begin
                 end loop;
             end loop;
             -- Calculate the threshold value
-            T := compute_threshold(my_matrix);
+            T <= compute_threshold(my_matrix);
 
-            -- Iterate over the image matrix to apply edge detection
             for i in 0 to 7 loop  -- count number = no of Rows of the image - no of rows of Gx + 1
                 for j in 0 to 7 loop
                     edge_matrix(i, j) <= compute_edge(i, j, T);  
@@ -129,34 +132,26 @@ begin
             -- Find the coordinates of the beginning and the end of the Line detection
             for i in 0 to 7 loop
                 for j in 0 to 7 loop
-                    if (F = 0) then
+                    if (i0 = 11) then
                         if (edge_matrix(i, j) = 1) then
                             i0 <= i;
                             i1 <= j;
-                            F  := 1;
                         end if;
                     else  
-                        if (edge_matrix(i, j) = 1) then
+								if (edge_matrix(i, j) = 1) then
                             i2 <= i;
                             i3 <= j;
-                        end if;
-                    end if;
-                end loop;
+								end if;
+						 end if;
+					end loop;
             end loop;
 				
-				i0 <= 3; -- just to try to test the display
-				i1 <= 4;
-				i2 <= 7;
-				i3 <= 9;
+				--i0 <= 3; -- just to try to test the display
+				--i1 <= 4;
+				--i2 <= 7;
+				--i3 <= 9;
         end if;
 		  
-		  
-		  --i0 <= 3; -- just to try to test the display
-        --i1 <= 4;
-		  --i2 <= 7;
-        --i3 <= 9;
-		  
-
     end process;
 
    
