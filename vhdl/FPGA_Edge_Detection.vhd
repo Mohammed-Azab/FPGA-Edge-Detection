@@ -8,7 +8,7 @@ use work.MatrixPkg.ALL;         -- Include the package with the matrix definitio
 
 entity FPGA_Edge_Detection is
     port (
-        clk : in STD_LOGIC;             -- Clock input 
+        enable : in STD_LOGIC;          -- enable input linked to switch 0 (sw0)
         reset : in STD_LOGIC;           -- Reset input
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0)  -- 7-segment displays as output
     );
@@ -91,22 +91,22 @@ begin
 
 
     -- Edge detection process
-    process(clk, reset)
+    process(enable, reset)
         variable T : integer := 0;  -- Declare T variable inside the process
         variable F : integer := 0;
     begin
-        if reset = '1' then -- clear the output if reset is on
+        if reset = '0' then -- clear the output if reset is on
             for i in 0 to 9 loop
                 for j in 0 to 9 loop
                     edge_matrix(i, j) <= 0;
                 end loop;
             end loop;
-				i0 <= 1;
-				i1 <= 2;
-				i2 <= 3;
-				i3 <= 4;
+				i0 <= 11;
+				i1 <= 11;
+				i2 <= 11;
+				i3 <= 11;
 				
-        elsif rising_edge(clk) then
+        elsif enable = '1' then
             for i in 0 to 9 loop
                 for j in 0 to 9 loop
                     edge_matrix(i, j) <= 0;
@@ -143,8 +143,15 @@ begin
                     end if;
                 end loop;
             end loop;
+				
+				i0 <= 3; -- just to try to test the display
+				i1 <= 4;
+				i2 <= 7;
+				i3 <= 9;
         end if;
-		  --i0 <= 3; -- just to try the display
+		  
+		  
+		  --i0 <= 3; -- just to try to test the display
         --i1 <= 4;
 		  --i2 <= 7;
         --i3 <= 9;
