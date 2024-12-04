@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "12/04/2024 00:05:45"
+-- DATE "12/04/2024 14:18:35"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -81,8 +81,10 @@ ww_devpor <= devpor;
 END structure;
 
 
+LIBRARY ALTERA;
 LIBRARY FIFTYFIVENM;
 LIBRARY IEEE;
+USE ALTERA.ALTERA_PRIMITIVES_COMPONENTS.ALL;
 USE FIFTYFIVENM.FIFTYFIVENM_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
@@ -90,18 +92,16 @@ ENTITY 	FPGA_Edge_Detection IS
     PORT (
 	clk : IN std_logic;
 	reset : IN std_logic;
-	HEX0 : OUT std_logic_vector(6 DOWNTO 0);
-	HEX1 : OUT std_logic_vector(6 DOWNTO 0);
-	HEX2 : OUT std_logic_vector(6 DOWNTO 0);
-	HEX3 : OUT std_logic_vector(6 DOWNTO 0);
-	HEX4 : OUT std_logic_vector(6 DOWNTO 0);
-	HEX5 : OUT std_logic_vector(6 DOWNTO 0)
+	HEX0 : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX1 : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX2 : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX3 : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX4 : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX5 : BUFFER std_logic_vector(6 DOWNTO 0)
 	);
 END FPGA_Edge_Detection;
 
 -- Design Ports Information
--- clk	=>  Location: PIN_T19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- reset	=>  Location: PIN_B8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[0]	=>  Location: PIN_C14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[1]	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[2]	=>  Location: PIN_C15,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -144,6 +144,8 @@ END FPGA_Edge_Detection;
 -- HEX5[4]	=>  Location: PIN_M20,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX5[5]	=>  Location: PIN_N19,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX5[6]	=>  Location: PIN_N20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clk	=>  Location: PIN_N15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- reset	=>  Location: PIN_B8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF FPGA_Edge_Detection IS
@@ -166,8 +168,7 @@ SIGNAL ww_HEX4 : std_logic_vector(6 DOWNTO 0);
 SIGNAL ww_HEX5 : std_logic_vector(6 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \clk~input_o\ : std_logic;
-SIGNAL \reset~input_o\ : std_logic;
+SIGNAL \clk~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
@@ -214,6 +215,30 @@ SIGNAL \HEX5[3]~output_o\ : std_logic;
 SIGNAL \HEX5[4]~output_o\ : std_logic;
 SIGNAL \HEX5[5]~output_o\ : std_logic;
 SIGNAL \HEX5[6]~output_o\ : std_logic;
+SIGNAL \clk~input_o\ : std_logic;
+SIGNAL \clk~inputclkctrl_outclk\ : std_logic;
+SIGNAL \i3[0]~feeder_combout\ : std_logic;
+SIGNAL \reset~input_o\ : std_logic;
+SIGNAL \edge_matrix[0][0][0]~feeder_combout\ : std_logic;
+SIGNAL \edge_matrix[0][0][0]~q\ : std_logic;
+SIGNAL \i3[1]~feeder_combout\ : std_logic;
+SIGNAL \SevenSegmentDisplay|WideOr5~combout\ : std_logic;
+SIGNAL \SevenSegmentDisplay|WideOr3~combout\ : std_logic;
+SIGNAL \SevenSegmentDisplay|Equal6~0_combout\ : std_logic;
+SIGNAL \SevenSegmentDisplay|Equal7~0_combout\ : std_logic;
+SIGNAL \i1[1]~feeder_combout\ : std_logic;
+SIGNAL \F[0]~0_combout\ : std_logic;
+SIGNAL \i1[0]~0_combout\ : std_logic;
+SIGNAL \i0[0]~feeder_combout\ : std_logic;
+SIGNAL i3 : std_logic_vector(31 DOWNTO 0);
+SIGNAL i1 : std_logic_vector(31 DOWNTO 0);
+SIGNAL i0 : std_logic_vector(31 DOWNTO 0);
+SIGNAL F : std_logic_vector(31 DOWNTO 0);
+SIGNAL ALT_INV_i0 : std_logic_vector(0 DOWNTO 0);
+SIGNAL ALT_INV_i1 : std_logic_vector(1 DOWNTO 1);
+SIGNAL \SevenSegmentDisplay|ALT_INV_Equal6~0_combout\ : std_logic;
+SIGNAL ALT_INV_i3 : std_logic_vector(0 DOWNTO 0);
+SIGNAL \ALT_INV_reset~input_o\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -239,13 +264,20 @@ ww_devpor <= devpor;
 \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
 
 \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
+
+\clk~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk~input_o\);
+ALT_INV_i0(0) <= NOT i0(0);
+ALT_INV_i1(1) <= NOT i1(1);
+\SevenSegmentDisplay|ALT_INV_Equal6~0_combout\ <= NOT \SevenSegmentDisplay|Equal6~0_combout\;
+ALT_INV_i3(0) <= NOT i3(0);
+\ALT_INV_reset~input_o\ <= NOT \reset~input_o\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X44_Y41_N8
+-- Location: LCCOMB_X44_Y52_N4
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -266,7 +298,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => ALT_INV_i3(0),
 	devoe => ww_devoe,
 	o => \HEX0[0]~output_o\);
 
@@ -278,7 +310,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \SevenSegmentDisplay|WideOr5~combout\,
 	devoe => ww_devoe,
 	o => \HEX0[1]~output_o\);
 
@@ -290,7 +322,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX0[2]~output_o\);
 
@@ -302,7 +334,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \SevenSegmentDisplay|WideOr3~combout\,
 	devoe => ww_devoe,
 	o => \HEX0[3]~output_o\);
 
@@ -314,7 +346,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \SevenSegmentDisplay|ALT_INV_Equal6~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX0[4]~output_o\);
 
@@ -326,7 +358,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \SevenSegmentDisplay|Equal7~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX0[5]~output_o\);
 
@@ -338,7 +370,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \SevenSegmentDisplay|Equal7~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX0[6]~output_o\);
 
@@ -350,7 +382,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX1[0]~output_o\);
 
@@ -362,7 +394,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX1[1]~output_o\);
 
@@ -374,7 +406,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX1[2]~output_o\);
 
@@ -386,7 +418,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => i3(1),
 	devoe => ww_devoe,
 	o => \HEX1[3]~output_o\);
 
@@ -422,7 +454,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => i3(1),
 	devoe => ww_devoe,
 	o => \HEX1[6]~output_o\);
 
@@ -506,7 +538,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX2[6]~output_o\);
 
@@ -590,7 +622,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX3[6]~output_o\);
 
@@ -602,7 +634,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX4[0]~output_o\);
 
@@ -614,7 +646,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX4[1]~output_o\);
 
@@ -626,7 +658,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => ALT_INV_i1(1),
 	devoe => ww_devoe,
 	o => \HEX4[2]~output_o\);
 
@@ -638,7 +670,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX4[3]~output_o\);
 
@@ -650,7 +682,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX4[4]~output_o\);
 
@@ -662,7 +694,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => ALT_INV_i1(1),
 	devoe => ww_devoe,
 	o => \HEX4[5]~output_o\);
 
@@ -674,7 +706,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => i1(1),
 	devoe => ww_devoe,
 	o => \HEX4[6]~output_o\);
 
@@ -686,7 +718,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => ALT_INV_i0(0),
 	devoe => ww_devoe,
 	o => \HEX5[0]~output_o\);
 
@@ -698,7 +730,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => ALT_INV_i0(0),
 	devoe => ww_devoe,
 	o => \HEX5[1]~output_o\);
 
@@ -710,7 +742,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => ALT_INV_i0(0),
 	devoe => ww_devoe,
 	o => \HEX5[2]~output_o\);
 
@@ -722,7 +754,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => ALT_INV_i0(0),
 	devoe => ww_devoe,
 	o => \HEX5[3]~output_o\);
 
@@ -734,7 +766,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX5[4]~output_o\);
 
@@ -746,7 +778,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX5[5]~output_o\);
 
@@ -762,7 +794,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[6]~output_o\);
 
--- Location: IOIBUF_X78_Y20_N23
+-- Location: IOIBUF_X78_Y29_N15
 \clk~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -773,6 +805,32 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_clk,
 	o => \clk~input_o\);
+
+-- Location: CLKCTRL_G7
+\clk~inputclkctrl\ : fiftyfivenm_clkctrl
+-- pragma translate_off
+GENERIC MAP (
+	clock_type => "global clock",
+	ena_register_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	inclk => \clk~inputclkctrl_INCLK_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	outclk => \clk~inputclkctrl_outclk\);
+
+-- Location: LCCOMB_X75_Y53_N8
+\i3[0]~feeder\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \i3[0]~feeder_combout\ = VCC
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \i3[0]~feeder_combout\);
 
 -- Location: IOIBUF_X46_Y54_N29
 \reset~input\ : fiftyfivenm_io_ibuf
@@ -785,6 +843,242 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_reset,
 	o => \reset~input_o\);
+
+-- Location: LCCOMB_X76_Y53_N4
+\edge_matrix[0][0][0]~feeder\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \edge_matrix[0][0][0]~feeder_combout\ = VCC
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \edge_matrix[0][0][0]~feeder_combout\);
+
+-- Location: FF_X76_Y53_N5
+\edge_matrix[0][0][0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \edge_matrix[0][0][0]~feeder_combout\,
+	clrn => \ALT_INV_reset~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \edge_matrix[0][0][0]~q\);
+
+-- Location: FF_X75_Y53_N9
+\i3[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \i3[0]~feeder_combout\,
+	clrn => \ALT_INV_reset~input_o\,
+	ena => \edge_matrix[0][0][0]~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => i3(0));
+
+-- Location: LCCOMB_X75_Y53_N14
+\i3[1]~feeder\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \i3[1]~feeder_combout\ = VCC
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \i3[1]~feeder_combout\);
+
+-- Location: FF_X75_Y53_N15
+\i3[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \i3[1]~feeder_combout\,
+	clrn => \ALT_INV_reset~input_o\,
+	ena => \edge_matrix[0][0][0]~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => i3(1));
+
+-- Location: LCCOMB_X75_Y53_N16
+\SevenSegmentDisplay|WideOr5\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \SevenSegmentDisplay|WideOr5~combout\ = i3(1) $ (i3(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => i3(1),
+	datac => i3(0),
+	combout => \SevenSegmentDisplay|WideOr5~combout\);
+
+-- Location: LCCOMB_X62_Y53_N24
+\SevenSegmentDisplay|WideOr3\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \SevenSegmentDisplay|WideOr3~combout\ = i3(0) $ (!i3(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => i3(0),
+	datad => i3(1),
+	combout => \SevenSegmentDisplay|WideOr3~combout\);
+
+-- Location: LCCOMB_X75_Y53_N10
+\SevenSegmentDisplay|Equal6~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \SevenSegmentDisplay|Equal6~0_combout\ = (i3(1) & !i3(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => i3(1),
+	datac => i3(0),
+	combout => \SevenSegmentDisplay|Equal6~0_combout\);
+
+-- Location: LCCOMB_X75_Y53_N12
+\SevenSegmentDisplay|Equal7~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \SevenSegmentDisplay|Equal7~0_combout\ = (i3(1) & i3(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => i3(1),
+	datac => i3(0),
+	combout => \SevenSegmentDisplay|Equal7~0_combout\);
+
+-- Location: LCCOMB_X76_Y53_N28
+\i1[1]~feeder\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \i1[1]~feeder_combout\ = VCC
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \i1[1]~feeder_combout\);
+
+-- Location: LCCOMB_X76_Y53_N6
+\F[0]~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \F[0]~0_combout\ = (F(0)) # ((!\reset~input_o\ & \edge_matrix[0][0][0]~q\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111001111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \reset~input_o\,
+	datac => F(0),
+	datad => \edge_matrix[0][0][0]~q\,
+	combout => \F[0]~0_combout\);
+
+-- Location: FF_X76_Y53_N7
+\F[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \F[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => F(0));
+
+-- Location: LCCOMB_X76_Y53_N24
+\i1[0]~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \i1[0]~0_combout\ = (\edge_matrix[0][0][0]~q\ & !F(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \edge_matrix[0][0][0]~q\,
+	datad => F(0),
+	combout => \i1[0]~0_combout\);
+
+-- Location: FF_X76_Y53_N29
+\i1[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \i1[1]~feeder_combout\,
+	clrn => \ALT_INV_reset~input_o\,
+	ena => \i1[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => i1(1));
+
+-- Location: LCCOMB_X76_Y53_N30
+\i0[0]~feeder\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \i0[0]~feeder_combout\ = VCC
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \i0[0]~feeder_combout\);
+
+-- Location: FF_X76_Y53_N31
+\i0[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~inputclkctrl_outclk\,
+	d => \i0[0]~feeder_combout\,
+	clrn => \ALT_INV_reset~input_o\,
+	ena => \i1[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => i0(0));
 
 -- Location: UNVM_X0_Y40_N40
 \~QUARTUS_CREATED_UNVM~\ : fiftyfivenm_unvm

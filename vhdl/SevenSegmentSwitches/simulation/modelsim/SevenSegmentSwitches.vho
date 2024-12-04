@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "12/03/2024 23:22:30"
+-- DATE "12/04/2024 11:44:47"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -99,13 +99,13 @@ ENTITY 	SevenSegmentSwitches IS
 END SevenSegmentSwitches;
 
 -- Design Ports Information
--- HEX0[0]	=>  Location: PIN_D6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX0[1]	=>  Location: PIN_B11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX0[2]	=>  Location: PIN_R10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX0[3]	=>  Location: PIN_Y8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX0[4]	=>  Location: PIN_C5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX0[5]	=>  Location: PIN_J4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX0[6]	=>  Location: PIN_D3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[0]	=>  Location: PIN_C14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[1]	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[2]	=>  Location: PIN_C15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[3]	=>  Location: PIN_C16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[4]	=>  Location: PIN_E16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[5]	=>  Location: PIN_D17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX0[6]	=>  Location: PIN_C17,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX1[0]	=>  Location: PIN_C18,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX1[1]	=>  Location: PIN_D18,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX1[2]	=>  Location: PIN_E18,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -127,20 +127,20 @@ END SevenSegmentSwitches;
 -- HEX3[4]	=>  Location: PIN_C20,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX3[5]	=>  Location: PIN_D19,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX3[6]	=>  Location: PIN_E17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX4[0]	=>  Location: PIN_L19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX4[1]	=>  Location: PIN_T1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX4[2]	=>  Location: PIN_Y21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX4[3]	=>  Location: PIN_W3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX4[4]	=>  Location: PIN_C15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX4[5]	=>  Location: PIN_AB8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX4[6]	=>  Location: PIN_F16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX5[0]	=>  Location: PIN_AA1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX5[1]	=>  Location: PIN_W8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX5[2]	=>  Location: PIN_L1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX5[3]	=>  Location: PIN_E11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX5[4]	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX5[5]	=>  Location: PIN_A16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- HEX5[6]	=>  Location: PIN_P21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[0]	=>  Location: PIN_F18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[1]	=>  Location: PIN_E20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[2]	=>  Location: PIN_E19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[3]	=>  Location: PIN_J18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[4]	=>  Location: PIN_H19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[5]	=>  Location: PIN_F19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX4[6]	=>  Location: PIN_F20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[0]	=>  Location: PIN_J20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[1]	=>  Location: PIN_K20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[2]	=>  Location: PIN_L18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[3]	=>  Location: PIN_N18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[4]	=>  Location: PIN_M20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[5]	=>  Location: PIN_N19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- HEX5[6]	=>  Location: PIN_N20,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- switches[0]	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- switches[1]	=>  Location: PIN_C11,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- switches[2]	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -268,7 +268,7 @@ GENERIC MAP (
 PORT MAP (
 	combout => \~QUARTUS_CREATED_GND~I_combout\);
 
--- Location: IOOBUF_X22_Y39_N30
+-- Location: IOOBUF_X58_Y54_N16
 \HEX0[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -280,7 +280,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX0[0]~output_o\);
 
--- Location: IOOBUF_X49_Y54_N9
+-- Location: IOOBUF_X74_Y54_N9
 \HEX0[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -292,7 +292,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX0[1]~output_o\);
 
--- Location: IOOBUF_X26_Y0_N16
+-- Location: IOOBUF_X60_Y54_N2
 \HEX0[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -304,7 +304,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX0[2]~output_o\);
 
--- Location: IOOBUF_X20_Y0_N2
+-- Location: IOOBUF_X62_Y54_N30
 \HEX0[3]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -316,7 +316,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX0[3]~output_o\);
 
--- Location: IOOBUF_X24_Y39_N23
+-- Location: IOOBUF_X74_Y54_N2
 \HEX0[4]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -328,7 +328,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX0[4]~output_o\);
 
--- Location: IOOBUF_X0_Y35_N16
+-- Location: IOOBUF_X74_Y54_N16
 \HEX0[5]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -340,7 +340,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX0[5]~output_o\);
 
--- Location: IOOBUF_X0_Y30_N2
+-- Location: IOOBUF_X74_Y54_N23
 \HEX0[6]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -604,7 +604,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX3[6]~output_o\);
 
--- Location: IOOBUF_X78_Y37_N9
+-- Location: IOOBUF_X78_Y40_N16
 \HEX4[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -616,7 +616,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX4[0]~output_o\);
 
--- Location: IOOBUF_X0_Y15_N2
+-- Location: IOOBUF_X78_Y40_N2
 \HEX4[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -628,7 +628,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX4[1]~output_o\);
 
--- Location: IOOBUF_X78_Y16_N2
+-- Location: IOOBUF_X78_Y40_N23
 \HEX4[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -640,7 +640,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX4[2]~output_o\);
 
--- Location: IOOBUF_X18_Y0_N9
+-- Location: IOOBUF_X78_Y42_N16
 \HEX4[3]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -652,7 +652,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX4[3]~output_o\);
 
--- Location: IOOBUF_X60_Y54_N2
+-- Location: IOOBUF_X78_Y45_N23
 \HEX4[4]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -664,7 +664,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX4[4]~output_o\);
 
--- Location: IOOBUF_X31_Y0_N9
+-- Location: IOOBUF_X78_Y40_N9
 \HEX4[5]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -676,7 +676,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX4[5]~output_o\);
 
--- Location: IOOBUF_X71_Y54_N30
+-- Location: IOOBUF_X78_Y35_N16
 \HEX4[6]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -688,7 +688,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX4[6]~output_o\);
 
--- Location: IOOBUF_X18_Y0_N30
+-- Location: IOOBUF_X78_Y45_N9
 \HEX5[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -700,7 +700,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[0]~output_o\);
 
--- Location: IOOBUF_X24_Y0_N2
+-- Location: IOOBUF_X78_Y42_N2
 \HEX5[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -712,7 +712,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[1]~output_o\);
 
--- Location: IOOBUF_X0_Y25_N9
+-- Location: IOOBUF_X78_Y37_N16
 \HEX5[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -724,7 +724,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[2]~output_o\);
 
--- Location: IOOBUF_X36_Y39_N16
+-- Location: IOOBUF_X78_Y34_N24
 \HEX5[3]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -736,7 +736,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[3]~output_o\);
 
--- Location: IOOBUF_X51_Y54_N16
+-- Location: IOOBUF_X78_Y34_N9
 \HEX5[4]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -748,7 +748,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[4]~output_o\);
 
--- Location: IOOBUF_X60_Y54_N16
+-- Location: IOOBUF_X78_Y34_N16
 \HEX5[5]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -760,7 +760,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[5]~output_o\);
 
--- Location: IOOBUF_X78_Y23_N9
+-- Location: IOOBUF_X78_Y34_N2
 \HEX5[6]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (

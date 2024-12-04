@@ -1,12 +1,12 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
 
 
 entity SevenSegmentOutput is
     Port (
-        i0, i1, i2, i3 : integer;
+        i0, i1, i2, i3 : in integer;
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0)  -- 7-segment displays as output
     );
 end SevenSegmentOutput;
@@ -23,7 +23,7 @@ architecture Behavioral of SevenSegmentOutput is
             when 4 => return "0011001"; -- 4 
             when 5 => return "0010010"; -- 5 
             when 6 => return "0000011"; -- 6 
-            when 7 => return "0111000"; -- 7 
+            when 7 => return "1111000"; -- 7 
             when 8 => return "0000000"; -- 8
             when 9 => return "0010000"; -- 9 
             when others => return "1111111"; -- Turn off the display for invalid input
@@ -32,11 +32,11 @@ architecture Behavioral of SevenSegmentOutput is
 
 begin
 
-    HEX0 <= int_to_7seg(i0); 
-    HEX1 <= int_to_7seg(i1); 
+    HEX0 <= int_to_7seg(i3); 
+    HEX1 <= int_to_7seg(i2); 
     HEX2 <= "0111111";
     HEX3 <= "0111111";
-    HEX4 <= int_to_7seg(i2);
-    HEX5 <= int_to_7seg(i3);
+    HEX4 <= int_to_7seg(i1);
+    HEX5 <= int_to_7seg(i0);
 
 end Behavioral;

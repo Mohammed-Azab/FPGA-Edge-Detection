@@ -30,6 +30,210 @@ TIMESCALE "1ns";
 
 TIMINGDATA
 
+ARCDATA
+pos_reset__clk__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("1.985");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("1.985");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_reset__clk__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-1.522");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-1.522");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX0[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.426");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.426");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX0[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.552");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.552");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX0[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("8.595");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("8.595");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX0[4]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.378");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.378");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX0[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.527");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.527");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX0[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.498");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.498");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX1[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.852");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.852");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX1[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.460");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.460");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX4[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.605");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.605");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX4[5]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.606");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.606");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX4[6]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.812");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.812");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX5[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.902");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.902");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX5[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("7.601");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("7.601");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX5[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("8.470");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("8.470");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__HEX5[3]__delay:
+CELL_RISE( scalar ) {
+VALUES ("8.176");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("8.176");
+}
+
+ENDARCDATA
+
 ENDTIMINGDATA
 
 ENDMODELDATA

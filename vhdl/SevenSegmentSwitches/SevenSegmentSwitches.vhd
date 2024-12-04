@@ -13,13 +13,13 @@ end SevenSegmentSwitches;
 
 architecture Behavioral of SevenSegmentSwitches is
 begin
-    
+    HEX2 <= "0111111"; -- display "-"
+	 HEX3 <= "0111111"; 
+
 
     process(switches)
     begin
-			HEX2 <= "0111111"; -- display "-"
-			HEX3 <= "0111111"; 
-
+			
         case switches(3 downto 0) is
             when "0000" => HEX1 <= "1000000";-- 0
             when "0001" => HEX1 <= "1001111"; -- 1

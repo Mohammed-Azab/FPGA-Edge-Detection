@@ -17,10 +17,18 @@ end FPGA_Edge_Detection;
 architecture STRUCT of FPGA_Edge_Detection is
 
     -- Matrix and filter variables from MatrixPkg
-    signal edge_matrix : ImageMatrix;
+    signal edge_matrix : ImageMatrix;	
     
     -- signals for the 7-segment display
     signal i0, i1, i2, i3 : integer; 
+	 
+	 component SevenSegmentOutput is
+    Port (
+        i0, i1, i2, i3 : in integer;
+        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0)
+    );
+	 end component;
+
 
     -- Function to compute the threshold value (mean of the matrix)
     function compute_threshold(my_matrix: ImageMatrix) return integer is
@@ -65,12 +73,26 @@ architecture STRUCT of FPGA_Edge_Detection is
     end function;
 
 
-begin
+begin	
+	 
+	 SevenSegmentDisplay : SevenSegmentOutput
+    port map (
+        i0 => i0,
+        i1 => i1,
+        i2 => i2,
+        i3 => i3,
+        HEX0 => HEX0,
+        HEX1 => HEX1,
+        HEX2 => HEX2,
+        HEX3 => HEX3,
+        HEX4 => HEX4,
+        HEX5 => HEX5
+							);
+
 
     -- Edge detection process
     process(clk, reset)
         variable T : integer := 0;  -- Declare T variable inside the process
-        variable i0, i1, i2, i3 : integer := 0;
         variable F : integer := 0;
     begin
         if reset = '1' then -- clear the output if reset is on
@@ -79,16 +101,10 @@ begin
                     edge_matrix(i, j) <= 0;
                 end loop;
             end loop;
-				i0 := 0;
-				i1 := 0;
-				i2 := 0;
-				i3 := 0;
-				HEX0 <= "1111111";
-				HEX1 <= "1111111";
-				HEX2 <= "1111111";
-				HEX3 <= "1111111";
-				HEX4 <= "1111111";
-				HEX5 <= "1111111";
+				i0 <= 1;
+				i1 <= 2;
+				i2 <= 3;
+				i3 <= 4;
 				
         elsif rising_edge(clk) then
             for i in 0 to 9 loop
@@ -115,23 +131,23 @@ begin
                 for j in 0 to 7 loop
                     if (F = 0) then
                         if (edge_matrix(i, j) = 1) then
-                            i0 := i;
-                            i1 := j;
+                            i0 <= i;
+                            i1 <= j;
                             F  := 1;
                         end if;
                     else  
                         if (edge_matrix(i, j) = 1) then
-                            i2 := i;
-                            i3 := j;
+                            i2 <= i;
+                            i3 <= j;
                         end if;
                     end if;
                 end loop;
             end loop;
         end if;
-		  i0 := 3;
-        i1 := 4;
-		  i2 := 7;
-        i3 := 9;
+		  --i0 <= 3; -- just to try the display
+        --i1 <= 4;
+		  --i2 <= 7;
+        --i3 <= 9;
 		  
 
     end process;
