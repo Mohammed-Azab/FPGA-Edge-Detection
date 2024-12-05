@@ -31,7 +31,7 @@ TIMESCALE "1ns";
 TIMINGDATA
 
 ARCDATA
-_8.453__delay:
+_6.757__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -43,7 +43,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.286__delay:
+_7.029__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -55,7 +55,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.484__delay:
+_7.078__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -67,7 +67,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.456__delay:
+_7.035__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -79,7 +79,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.778__delay:
+_7.851__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -91,7 +91,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.148__delay:
+_7.841__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -103,7 +103,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.138__delay:
+_7.510__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -115,7 +115,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.562__delay:
+_7.169__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -127,7 +127,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.573__delay:
+_7.521__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -139,7 +139,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.169__delay:
+_7.166__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -151,7 +151,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_7.849__delay:
+_7.135__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -163,7 +163,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.928__delay:
+_7.152__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -175,7 +175,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.867__delay:
+_7.153__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -187,7 +187,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.866__delay:
+_7.152__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }

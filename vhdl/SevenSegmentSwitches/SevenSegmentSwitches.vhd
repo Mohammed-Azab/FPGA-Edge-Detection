@@ -13,25 +13,30 @@ end SevenSegmentSwitches;
 
 architecture Behavioral of SevenSegmentSwitches is
 begin
-    HEX2 <= "0111111"; -- display "-"
-	 HEX3 <= "0111111"; 
+   
 
 
     process(switches)
     begin
 			
+			 HEX2 <= "0111111"; -- display "-"
+			 HEX3 <= "0111111";
+			 HEX1 <= "1111111";
+			 HEX4 <= "1111111";
+			 HEX5 <= "1111111";
+			
         case switches(3 downto 0) is
-            when "0000" => HEX1 <= "1000000";-- 0
-            when "0001" => HEX1 <= "1001111"; -- 1
-            when "0010" => HEX1 <= "0100100"; -- 2 
-            when "0011" => HEX1 <= "0110000"; -- 3 
-            when "0100" => HEX1 <= "0011001"; -- 4 
-            when "0101" => HEX1 <= "0010010"; -- 5 
-            when "0110" => HEX1 <= "0000011"; -- 6 
-            when "0111" => HEX1 <= "0111000"; -- 7 
-            when "1000" => HEX1 <= "0000000"; -- 8
-            when "1001" => HEX1 <= "0010000"; -- 9 
-            when others => HEX1 <= "1111111"; -- Turn off the display
+            when "0000" => HEX0 <= "1000000";-- 0
+            when "0001" => HEX0 <= "1001111"; -- 1
+            when "0010" => HEX0 <= "0100100"; -- 2 
+            when "0011" => HEX0 <= "0110000"; -- 3 
+            when "0100" => HEX0 <= "0011001"; -- 4 
+            when "0101" => HEX0 <= "0010010"; -- 5 
+            when "0110" => HEX0 <= "0000011"; -- 6 
+            when "0111" => HEX0 <= "1111000"; -- 7 
+            when "1000" => HEX0 <= "0000000"; -- 8
+            when "1001" => HEX0 <= "0010000"; -- 9 
+            when others => HEX0 <= "1111111"; -- Turn off the display
         end case;
     end process;
 end Behavioral;

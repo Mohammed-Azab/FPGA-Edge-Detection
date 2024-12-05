@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_Edge_Detection
-Wed Dec 04 21:16:29 2024
+Thu Dec 05 19:03:26 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. General Register Statistics
- 10. Port Connectivity Checks: "SevenSegmentOutput:SevenSegmentDisplay"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Port Connectivity Checks: "SevenSegmentOutput:SevenSegmentDisplay"
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 04 21:16:29 2024       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 05 19:03:26 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; FPGA_Edge_Detection                         ;
 ; Top-level Entity Name              ; FPGA_Edge_Detection                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3                                           ;
-;     Total combinational functions  ; 3                                           ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 44                                          ;
@@ -177,59 +176,45 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimated Total logic elements              ; 3       ;
-;                                             ;         ;
-; Total combinational functions               ; 3       ;
-; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 0       ;
-;     -- 3 input functions                    ; 0       ;
-;     -- <=2 input functions                  ; 3       ;
-;                                             ;         ;
-; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 3       ;
-;     -- arithmetic mode                      ; 0       ;
-;                                             ;         ;
-; Total registers                             ; 0       ;
-;     -- Dedicated logic registers            ; 0       ;
-;     -- I/O registers                        ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 44      ;
-;                                             ;         ;
-; Embedded Multiplier 9-bit elements          ; 0       ;
-;                                             ;         ;
-; Maximum fan-out node                        ; i1[3]~0 ;
-; Maximum fan-out                             ; 10      ;
-; Total fan-out                               ; 68      ;
-; Average fan-out                             ; 0.75    ;
-+---------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                 ;
-+---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                         ; Entity Name         ; Library Name ;
-+---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+---------------------+--------------+
-; |FPGA_Edge_Detection                        ; 3 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |FPGA_Edge_Detection                                        ; FPGA_Edge_Detection ; work         ;
-;    |SevenSegmentOutput:SevenSegmentDisplay| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_Edge_Detection|SevenSegmentOutput:SevenSegmentDisplay ; SevenSegmentOutput  ; work         ;
-+---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
 +------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; Equal0~0                                               ;   ;
-; Equal0~1                                               ;   ;
-; Number of logic cells representing combinational loops ; 2 ;
-+--------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+;                                             ;              ;
+; Total combinational functions               ; 0            ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 0            ;
+;     -- 3 input functions                    ; 0            ;
+;     -- <=2 input functions                  ; 0            ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 0            ;
+;     -- arithmetic mode                      ; 0            ;
+;                                             ;              ;
+; Total registers                             ; 0            ;
+;     -- Dedicated logic registers            ; 0            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 44           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; enable~input ;
+; Maximum fan-out                             ; 14           ;
+; Total fan-out                               ; 58           ;
+; Average fan-out                             ; 0.66         ;
++---------------------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+; |FPGA_Edge_Detection       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |FPGA_Edge_Detection ; FPGA_Edge_Detection ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 +------------------------------------------------------+
@@ -265,14 +250,13 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 44                          ;
-; cycloneiii_lcell_comb ; 6                           ;
-;     normal            ; 6                           ;
+; cycloneiii_lcell_comb ; 3                           ;
+;     normal            ; 3                           ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.13                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.50                        ;
 +-----------------------+-----------------------------+
 
 
@@ -291,7 +275,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Dec 04 21:16:18 2024
+    Info: Processing started: Thu Dec 05 19:03:15 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_Edge_Detection -c FPGA_Edge_Detection
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -310,12 +294,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file sevense
     Info (12022): Found design unit 1: SevenSegmentOutput-Behavioral File: D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentOutput.vhd Line: 14
     Info (12023): Found entity 1: SevenSegmentOutput File: D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentOutput.vhd Line: 7
 Info (12127): Elaborating entity "FPGA_Edge_Detection" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at FPGA_Edge_Detection.vhd(100): object "firstTime" assigned a value but never read File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(114): signal "T" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(119): signal "T" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 119
 Warning (10542): VHDL Variable Declaration warning at math_real_vhdl1993.vhd(2373): used initial value expression for variable "RECIPROCAL" because variable was never assigned a value File: c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/1993/math_real_vhdl1993.vhd Line: 2373
-Warning (10492): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(125): signal "i0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(128): signal "edge_matrix" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 128
-Warning (10492): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(134): signal "edge_matrix" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(131): signal "edge_matrix" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(137): signal "edge_matrix" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 137
 Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(99): inferring latch(es) for signal or variable "T", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 99
 Warning (10631): VHDL Process Statement warning at FPGA_Edge_Detection.vhd(99): inferring latch(es) for signal or variable "edge_matrix", which holds its previous value in one or more paths through the process File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 99
 Info (10041): Inferred latch for "edge_matrix[7][7][0]" at FPGA_Edge_Detection.vhd(99) File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 99
@@ -2401,9 +2383,10 @@ Info (10041): Inferred latch for "T[31]" at FPGA_Edge_Detection.vhd(99) File: D:
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "edge_matrix" into its bus
 Info (12128): Elaborating entity "SevenSegmentOutput" for hierarchy "SevenSegmentOutput:SevenSegmentDisplay" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 83
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX0[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX0[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX1[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX1[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX1[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
@@ -2422,20 +2405,22 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3[4]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX3[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX3[6]" is stuck at GND File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
     Warning (13410): Pin "HEX4[2]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
-Info (286030): Timing-Driven Synthesis is running
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 13
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "reset" File: D:/CS Projects/FPGA-Edge-Detection/vhdl/FPGA_Edge_Detection.vhd Line: 12
-Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 3 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4804 megabytes
-    Info: Processing ended: Wed Dec 04 21:16:29 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Thu Dec 05 19:03:26 2024
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:23
 

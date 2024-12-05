@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("D:/CS Projects/SevenSegmentSwitches/output_files/") File("SevenSegmentSwitches.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentSwitches/output_files/") File("SevenSegmentSwitches.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

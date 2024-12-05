@@ -31,7 +31,7 @@ TIMESCALE "1ns";
 TIMINGDATA
 
 ARCDATA
-_9.286__delay:
+_7.445__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -43,7 +43,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_10.161__delay:
+_7.738__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -55,7 +55,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.316__delay:
+_7.791__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -67,7 +67,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.287__delay:
+_7.739__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -79,7 +79,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.627__delay:
+_8.658__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -91,7 +91,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.965__delay:
+_8.648__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -103,7 +103,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.956__delay:
+_8.279__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -115,7 +115,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.412__delay:
+_7.901__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -127,7 +127,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.423__delay:
+_8.290__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -139,7 +139,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.994__delay:
+_7.901__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -151,7 +151,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_8.653__delay:
+_7.867__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -163,7 +163,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.802__delay:
+_7.882__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -175,7 +175,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.741__delay:
+_7.883__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }
@@ -187,7 +187,7 @@ VALUES ("");
 ENDARCDATA
 
 ARCDATA
-_9.741__delay:
+_7.882__delay:
 CELL_RISE( scalar ) {
 VALUES ("");
 }

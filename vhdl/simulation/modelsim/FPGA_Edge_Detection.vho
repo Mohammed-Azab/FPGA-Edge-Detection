@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "12/04/2024 21:16:47"
+-- DATE "12/05/2024 19:03:43"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -167,6 +167,7 @@ SIGNAL ww_HEX5 : std_logic_vector(6 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \reset~input_o\ : std_logic;
+SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC2~~eoc\ : std_logic;
@@ -213,10 +214,7 @@ SIGNAL \HEX5[4]~output_o\ : std_logic;
 SIGNAL \HEX5[5]~output_o\ : std_logic;
 SIGNAL \HEX5[6]~output_o\ : std_logic;
 SIGNAL \enable~input_o\ : std_logic;
-SIGNAL \i1[3]~0_combout\ : std_logic;
-SIGNAL \i3[3]~0_combout\ : std_logic;
-SIGNAL \SevenSegmentDisplay|WideOr27~0_combout\ : std_logic;
-SIGNAL \SevenSegmentDisplay|ALT_INV_WideOr27~0_combout\ : std_logic;
+SIGNAL \ALT_INV_enable~input_o\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -239,15 +237,28 @@ ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
-\~QUARTUS_CREATED_ADC1~_CHSEL_bus\ <= (\SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\);
+\~QUARTUS_CREATED_ADC1~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
 
-\~QUARTUS_CREATED_ADC2~_CHSEL_bus\ <= (\SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\ & \SevenSegmentDisplay|WideOr27~0_combout\);
-\SevenSegmentDisplay|ALT_INV_WideOr27~0_combout\ <= NOT \SevenSegmentDisplay|WideOr27~0_combout\;
+\~QUARTUS_CREATED_ADC2~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
+\ALT_INV_enable~input_o\ <= NOT \enable~input_o\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
+
+-- Location: LCCOMB_X1_Y1_N24
+\~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \~QUARTUS_CREATED_GND~I_combout\ = GND
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \~QUARTUS_CREATED_GND~I_combout\);
 
 -- Location: IOOBUF_X58_Y54_N16
 \HEX0[0]~output\ : fiftyfivenm_io_obuf
@@ -257,7 +268,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX0[0]~output_o\);
 
@@ -269,7 +280,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i3[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX0[1]~output_o\);
 
@@ -281,7 +292,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i3[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX0[2]~output_o\);
 
@@ -317,7 +328,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i3[3]~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX0[5]~output_o\);
 
@@ -329,7 +340,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i3[3]~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX0[6]~output_o\);
 
@@ -341,7 +352,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i3[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX1[0]~output_o\);
 
@@ -353,7 +364,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i3[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX1[1]~output_o\);
 
@@ -365,7 +376,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i3[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX1[2]~output_o\);
 
@@ -593,7 +604,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i1[3]~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[0]~output_o\);
 
@@ -605,7 +616,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i1[3]~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[1]~output_o\);
 
@@ -629,7 +640,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i1[3]~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[3]~output_o\);
 
@@ -641,7 +652,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i1[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX4[4]~output_o\);
 
@@ -653,7 +664,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX4[5]~output_o\);
 
@@ -665,7 +676,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i1[3]~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[6]~output_o\);
 
@@ -677,7 +688,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \SevenSegmentDisplay|ALT_INV_WideOr27~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX5[0]~output_o\);
 
@@ -689,7 +700,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \SevenSegmentDisplay|ALT_INV_WideOr27~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX5[1]~output_o\);
 
@@ -701,7 +712,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \SevenSegmentDisplay|ALT_INV_WideOr27~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX5[2]~output_o\);
 
@@ -713,7 +724,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \SevenSegmentDisplay|ALT_INV_WideOr27~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX5[3]~output_o\);
 
@@ -725,7 +736,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i1[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX5[4]~output_o\);
 
@@ -737,7 +748,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \i1[3]~0_combout\,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX5[5]~output_o\);
 
@@ -749,7 +760,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \SevenSegmentDisplay|ALT_INV_WideOr27~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[6]~output_o\);
 
@@ -764,50 +775,6 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_enable,
 	o => \enable~input_o\);
-
--- Location: LCCOMB_X77_Y49_N10
-\i1[3]~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \i1[3]~0_combout\ = (!\i1[3]~0_combout\) # (!\enable~input_o\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \enable~input_o\,
-	datad => \i1[3]~0_combout\,
-	combout => \i1[3]~0_combout\);
-
--- Location: LCCOMB_X77_Y49_N0
-\i3[3]~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \i3[3]~0_combout\ = (\i1[3]~0_combout\) # (!\enable~input_o\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \enable~input_o\,
-	datad => \i1[3]~0_combout\,
-	combout => \i3[3]~0_combout\);
-
--- Location: LCCOMB_X77_Y49_N20
-\SevenSegmentDisplay|WideOr27~0\ : fiftyfivenm_lcell_comb
--- Equation(s):
--- \SevenSegmentDisplay|WideOr27~0_combout\ = GND
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \i1[3]~0_combout\,
-	combout => \SevenSegmentDisplay|WideOr27~0_combout\);
 
 -- Location: IOIBUF_X46_Y54_N29
 \reset~input\ : fiftyfivenm_io_ibuf
@@ -841,9 +808,9 @@ GENERIC MAP (
 	reserve_block => "true")
 -- pragma translate_on
 PORT MAP (
-	nosc_ena => \SevenSegmentDisplay|WideOr27~0_combout\,
-	xe_ye => \SevenSegmentDisplay|WideOr27~0_combout\,
-	se => \SevenSegmentDisplay|WideOr27~0_combout\,
+	nosc_ena => \~QUARTUS_CREATED_GND~I_combout\,
+	xe_ye => \~QUARTUS_CREATED_GND~I_combout\,
+	se => \~QUARTUS_CREATED_GND~I_combout\,
 	busy => \~QUARTUS_CREATED_UNVM~~busy\);
 
 -- Location: ADCBLOCK_X43_Y52_N0
@@ -863,9 +830,9 @@ GENERIC MAP (
 	tsclksel => 0)
 -- pragma translate_on
 PORT MAP (
-	soc => \SevenSegmentDisplay|WideOr27~0_combout\,
+	soc => \~QUARTUS_CREATED_GND~I_combout\,
 	usr_pwd => VCC,
-	tsen => \SevenSegmentDisplay|WideOr27~0_combout\,
+	tsen => \~QUARTUS_CREATED_GND~I_combout\,
 	chsel => \~QUARTUS_CREATED_ADC1~_CHSEL_bus\,
 	eoc => \~QUARTUS_CREATED_ADC1~~eoc\);
 
@@ -886,9 +853,9 @@ GENERIC MAP (
 	tsclksel => 0)
 -- pragma translate_on
 PORT MAP (
-	soc => \SevenSegmentDisplay|WideOr27~0_combout\,
+	soc => \~QUARTUS_CREATED_GND~I_combout\,
 	usr_pwd => VCC,
-	tsen => \SevenSegmentDisplay|WideOr27~0_combout\,
+	tsen => \~QUARTUS_CREATED_GND~I_combout\,
 	chsel => \~QUARTUS_CREATED_ADC2~_CHSEL_bus\,
 	eoc => \~QUARTUS_CREATED_ADC2~~eoc\);
 

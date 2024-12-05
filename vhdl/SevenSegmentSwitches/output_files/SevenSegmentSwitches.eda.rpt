@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SevenSegmentSwitches
-Wed Dec 04 11:44:48 2024
+Thu Dec 05 12:43:12 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                    ;
 +---------------------------------------+---------------------------------------+
-; EDA Netlist Writer Status             ; Successful - Wed Dec 04 11:44:48 2024 ;
+; EDA Netlist Writer Status             ; Successful - Thu Dec 05 12:43:12 2024 ;
 ; Revision Name                         ; SevenSegmentSwitches                  ;
 ; Top-level Entity Name                 ; SevenSegmentSwitches                  ;
 ; Family                                ; MAX 10                                ;
@@ -114,7 +114,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Dec 04 11:44:46 2024
+    Info: Processing started: Thu Dec 05 12:43:11 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off SevenSegmentSwitches -c SevenSegmentSwitches
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file SevenSegmentSwitches.vho in folder "D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentSwitches/simulation/modelsim/" for EDA simulation tool
@@ -126,8 +126,8 @@ Warning (199059): Can't generate files for ViewDraw EDA tool -- device family no
 Info (199050): Generated IBIS Output File D:/CS Projects/FPGA-Edge-Detection/vhdl/SevenSegmentSwitches/board/ibis/SevenSegmentSwitches.ibs for board level analysis
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4668 megabytes
-    Info: Processing ended: Wed Dec 04 11:44:48 2024
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Thu Dec 05 12:43:12 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

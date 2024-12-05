@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use ieee.math_real.all;
 
--- Include the package where the matrix is defined
+-- Include the package where the matrix is defined 
 use work.MatrixPkg.ALL;         -- Include the package with the matrix definition
 
 entity FPGA_Edge_Detection is
@@ -22,7 +22,7 @@ architecture STRUCT of FPGA_Edge_Detection is
     -- signals for the 7-segment display
     signal i0, i1, i2, i3 : integer; 
 	 
-	 --signal F : integer := 0;  -- Flag
+	 --signal F : STD_LOGIC;  -- Flag
 
 	 signal T : integer := 0;  -- Threshold
 
@@ -97,7 +97,8 @@ begin
 
     -- Edge detection process
     process(enable, reset)
-			variable firstTime : boolean := true;
+			--variable firstTime : boolean := true;
+			variable F : integer ;
     begin
 	 
 			 
@@ -105,11 +106,13 @@ begin
 		  i1 <= 11;
 		  i2 <= 11;
 		  i3 <= 11;
+		  F := 0;
+		  
         if enable = '1' then
             
             -- Calculate the threshold value
-            --T <= compute_threshold(my_matrix);
-				T <= 138;
+            T <= compute_threshold(my_matrix);
+				--T <= 5;
 
             for i in 0 to 7 loop  -- count number = no of Rows of the image - no of rows of Gx + 1
                 for j in 0 to 7 loop
@@ -124,13 +127,11 @@ begin
             -- Find the coordinates of the beginning and the end of the Line detection
             for i in 0 to 7 loop
                 for j in 0 to 7 loop
-                    if (i0 = 11) then
-									i0 <= 1;
-									i1 <= 2;
+                    if (F = 0) then
                         if (edge_matrix(i, j) = 1) then
                             i0 <= i;
                             i1 <= j;
-									 firstTime := false;
+									 F := F + 1;
                         end if;
                     else  
 								if (edge_matrix(i, j) = 1) then
@@ -140,11 +141,6 @@ begin
 						 end if;
 					end loop;
             end loop;
-				
-				--i0 <= 3; -- just to try to test the display
-				--i1 <= 4;
-				--i2 <= 7;
-				--i3 <= 9;
         end if;
 		  
     end process;
