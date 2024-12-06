@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "12/05/2024 19:03:43"
+-- DATE "12/06/2024 15:59:04"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -268,7 +268,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ALT_INV_enable~input_o\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX0[0]~output_o\);
 
@@ -328,7 +328,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX0[5]~output_o\);
 
@@ -340,7 +340,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX0[6]~output_o\);
 
@@ -388,7 +388,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX1[3]~output_o\);
 
@@ -400,7 +400,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX1[4]~output_o\);
 
@@ -412,7 +412,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX1[5]~output_o\);
 
@@ -424,7 +424,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX1[6]~output_o\);
 
@@ -604,7 +604,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX4[0]~output_o\);
 
@@ -616,7 +616,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX4[1]~output_o\);
 
@@ -628,7 +628,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX4[2]~output_o\);
 
@@ -640,7 +640,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX4[3]~output_o\);
 
@@ -652,7 +652,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ALT_INV_enable~input_o\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[4]~output_o\);
 
@@ -664,7 +664,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ALT_INV_enable~input_o\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[5]~output_o\);
 
@@ -676,7 +676,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX4[6]~output_o\);
 
@@ -712,7 +712,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ALT_INV_enable~input_o\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[2]~output_o\);
 
@@ -748,7 +748,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ALT_INV_enable~input_o\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[5]~output_o\);
 
@@ -760,7 +760,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \ALT_INV_enable~input_o\,
 	devoe => ww_devoe,
 	o => \HEX5[6]~output_o\);
 

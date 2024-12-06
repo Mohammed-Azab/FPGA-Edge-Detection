@@ -24,7 +24,7 @@ architecture STRUCT of FPGA_Edge_Detection is
 	 
 	 --signal F : STD_LOGIC;  -- Flag
 
-	 signal T : integer := 0;  -- Threshold
+	 --signal T : integer := 0;  -- Threshold
 
 	 
 	 component SevenSegmentOutput is
@@ -35,10 +35,10 @@ architecture STRUCT of FPGA_Edge_Detection is
 	 end component;
 
 
-    -- Function to compute the threshold value (mean of the matrix)
+    -- Function to compute the threshold value (Factor Theroy of the matrix)
     function compute_threshold(my_matrix: ImageMatrix) return integer is
         variable sum : integer := 0;
-        variable mean : integer := 1;
+        variable output : integer := 1;
     begin
         
         for i in 0 to 9 loop 
@@ -48,8 +48,8 @@ architecture STRUCT of FPGA_Edge_Detection is
         end loop;
 
         -- Compute the mean (threshold)
-        mean := sum / 100;  -- Assuming a 10x10 matrix (100 elements in total)
-        return mean;
+        output := (sum * 1) / 14 ;  -- Assuming a 10x10 matrix (100 elements in total)
+        return output;
     end function;
 
     -- Function to compute gradient magnitude
@@ -99,6 +99,7 @@ begin
     process(enable, reset)
 			--variable firstTime : boolean := true;
 			variable F : integer ;
+			Variable T : integer ;
     begin
 	 
 			 
@@ -107,16 +108,17 @@ begin
 		  i2 <= 11;
 		  i3 <= 11;
 		  F := 0;
+		  T := compute_threshold(my_matrix);
 		  
         if enable = '1' then
             
             -- Calculate the threshold value
-            T <= compute_threshold(my_matrix);
-				--T <= 5;
+            --T := compute_threshold(my_matrix);
+				--T := 300;
 
-            for i in 0 to 7 loop  -- count number = no of Rows of the image - no of rows of Gx + 1
-                for j in 0 to 7 loop
-                    edge_matrix(i, j) <= compute_edge(i, j, T);  
+            for i in 1 to 8 loop  -- count number = no of Rows of the image - no of rows of Gx + 1
+                for j in 1 to 8 loop
+                    edge_matrix(i, j) <= compute_edge(i-1, j-1, T);  
         
                     -- Assertion to check if edge_matrix(i, j) is 1
                     assert edge_matrix(i, j) = 1
@@ -125,8 +127,8 @@ begin
             end loop;
             
             -- Find the coordinates of the beginning and the end of the Line detection
-            for i in 0 to 7 loop
-                for j in 0 to 7 loop
+            for i in 1 to 8 loop
+                for j in 1 to 8 loop
                     if (F = 0) then
                         if (edge_matrix(i, j) = 1) then
                             i0 <= i;
