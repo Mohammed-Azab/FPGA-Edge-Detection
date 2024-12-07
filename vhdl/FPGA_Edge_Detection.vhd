@@ -3,21 +3,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use ieee.math_real.all;
 
--- Include the package where the matrix is defined 
-use work.MatrixPkg.ALL;         -- Include the package with the matrix definition
+use work.MatrixPkg.ALL;        
 
 entity FPGA_Edge_Detection is
     port (
         enable : in STD_LOGIC;          -- enable input linked to switch 0 (sw0)
-        reset : in STD_LOGIC;           -- Reset input
+        reset : in STD_LOGIC;          
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out STD_LOGIC_VECTOR(6 downto 0)  -- 7-segment displays as output
     );
 end FPGA_Edge_Detection;
 
 architecture STRUCT of FPGA_Edge_Detection is
 
-    -- Matrix and filter variables from MatrixPkg
-    signal edge_matrix : ImageMatrix;	
+    
+    signal edge_matrix : ImageMatrix;	-- ImageMatrixMatrix from MatrixPkg
     
     -- signals for the 7-segment display
     signal i0, i1, i2, i3 : integer; 
@@ -34,26 +33,70 @@ architecture STRUCT of FPGA_Edge_Detection is
     );
 	 end component;
 
-
-    -- Function to compute the threshold value (Factor Theroy of the matrix)
-    function compute_threshold(my_matrix: ImageMatrix) return integer is
+	 function isItActiveHigh(my_matrix: ImageMatrix) return boolean is 
+		  variable activeHigh : boolean := false;
+		  variable minValues : integer := 0;
+		  variable maxValues : integer := 0;
+	 begin
+        
+        for i in 0 to 9 loop
+            for j in 0 to 9 loop 
+				    if (my_matrix(i, j) > 125) then 
+								if (my_matrix(i, j) < 256) then
+										maxValues := maxValues + 1;
+								end if;
+					 else 
+							if (my_matrix(i, j) < 126) then
+								if (my_matrix(i, j) > -1) then
+											minValues := minValues + 1;
+								end if;
+							end if;
+					 end if;
+            end loop; 
+        end loop;
+		  if (maxvalues < minValues) then 
+				activeHigh := true;
+		  end if;
+		  
+		  return activeHigh; -- means the "0" is the dominant and the edge is detected in 1's.
+	 end function;
+		
+		
+    function compute_threshold(my_matrix: ImageMatrix) return integer is -- (Factor Theroy of the matrix)
         variable sum : integer := 0;
-        variable output : integer := 1;
+		  variable minValue : integer := 0;
+		  variable maxValue : integer := 0;
+		  variable threshold : integer := 0;
+		  variable dynamic_range : integer := 1;
+
     begin
         
-        for i in 0 to 9 loop 
-            for j in 0 to 9 loop
-                sum := sum + my_matrix(i, j);  
+        for i in 0 to 9 loop
+            for j in 0 to 9 loop 
+                sum := sum + my_matrix(i, j);
+				    if (my_matrix(i, j) > maxValue) then 
+								maxValue := my_matrix(i, j);
+					 end if;
+					 if (my_matrix(i, j) < minValue) then
+								minValue := my_matrix(i, j); 
+					 end if;
             end loop;
         end loop;
-
-        -- Compute the mean (threshold)
-        output := (sum * 1) / 14 ;  -- Assuming a 10x10 matrix (100 elements in total)
-        return output;
+		  dynamic_range  := maxValue - minValue;
+		  if dynamic_range = 0 then
+        dynamic_range := 1; -- Prevent division by zero
+        end if;
+		  
+		  if (isItActiveHigh(my_matrix)) then 
+				threshold := integer((real(sum) / 25.0) + (8.0 * real(dynamic_range) / 10.0)); -- scaling_factor = 80%
+				else 
+					 threshold := integer((6.0 * real(dynamic_range) / 10.0)); -- scaling_factor = 60%
+		  end if;
+        return threshold;
     end function;
 
-    -- Function to compute gradient magnitude
-    function compute_edge(x: integer; y: integer; T: integer) return integer is
+    
+    function compute_edge(x: integer; y: integer; T: integer) return integer is -- compute gradient magnitude
         variable gx_val : integer := 0;
         variable gy_val : integer := 0;
         variable edge_val : integer := 0;
@@ -66,10 +109,9 @@ architecture STRUCT of FPGA_Edge_Detection is
             end loop;
         end loop;
 
-        -- Compute the magnitude of the gradient
-        edge_val := integer(sqrt(real(gx_val**2 + gy_val**2)));
+        
+        edge_val := integer(sqrt(real(gx_val**2 + gy_val**2))); -- Compute the magnitude of the gradient
 
-        -- Return edge based on threshold
         if edge_val < T then 
             return 0;
         else 
@@ -95,13 +137,12 @@ begin
 							);
 
 
-    -- Edge detection process
     process(enable, reset)
 			--variable firstTime : boolean := true;
 			variable F : integer ;
 			Variable T : integer ;
+			Variable DEE : integer := 1; -- detected Edge Element
     begin
-	 
 			 
 		  i0 <= 11;
 		  i1 <= 11;
@@ -109,12 +150,12 @@ begin
 		  i3 <= 11;
 		  F := 0;
 		  T := compute_threshold(my_matrix);
-		  
+				
         if enable = '1' then
             
-            -- Calculate the threshold value
             --T := compute_threshold(my_matrix);
 				--T := 300;
+				--T := 145; 130:155
 
             for i in 1 to 8 loop  -- count number = no of Rows of the image - no of rows of Gx + 1
                 for j in 1 to 8 loop
