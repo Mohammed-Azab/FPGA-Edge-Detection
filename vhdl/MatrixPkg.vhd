@@ -20,7 +20,6 @@ constant my_matrix : ImageMatrix :=
        (  5,  42,  33, 112, 136,  42,  35,  42,  41,  35),
        ( 31,   8,  37,  33,  12,  40,  32,  37,   9,  42)
 
-
 																			);
 
 type Prewitte_Filter is array (0 to 2, 0 to 2) of integer;

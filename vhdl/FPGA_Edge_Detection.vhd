@@ -64,8 +64,11 @@ architecture STRUCT of FPGA_Edge_Detection is
 		
     function compute_threshold(my_matrix: ImageMatrix) return integer is -- (Factor Theroy of the matrix)
         variable sum : integer := 0;
-		  variable minValue : integer := 0;
+		  variable minValue : integer := 255;
 		  variable maxValue : integer := 0;
+		  variable maximum : integer := 0;
+		  variable maxRight : integer := 0;
+		  variable maxLeft : integer := 0;
 		  variable threshold : integer := 0;
 		  variable dynamic_range : integer := 1;
 
@@ -74,11 +77,21 @@ architecture STRUCT of FPGA_Edge_Detection is
         for i in 0 to 9 loop
             for j in 0 to 9 loop 
                 sum := sum + my_matrix(i, j);
-				    if (my_matrix(i, j) > maxValue) then 
-								maxValue := my_matrix(i, j);
+					 if (my_matrix(i, j) > maximum) then
+								maximum := my_matrix(i, j);
 					 end if;
 					 if (my_matrix(i, j) < minValue) then
-								minValue := my_matrix(i, j); 
+								minValue := my_matrix(i, j);
+								if (i > 0) then 
+									maxLeft := my_matrix(i, j-1);
+									maxValue := maxLeft;
+								end if;
+								if (j < 9) then 
+									maxRight := my_matrix(i, j+1);
+									if (maxLeft < maxRight) then 
+										maxValue := maxRight;
+									end if;
+								end if;
 					 end if;
             end loop;
         end loop;
@@ -88,9 +101,9 @@ architecture STRUCT of FPGA_Edge_Detection is
         end if;
 		  
 		  if (isItActiveHigh(my_matrix)) then 
-				threshold := integer((real(sum) / 25.0) + (8.0 * real(dynamic_range) / 10.0)); -- scaling_factor = 80%
+				threshold := integer((real(sum) / 25.0) + (8.0 * real(maximum) / 10.0)); -- scaling_factor = 80%
 				else 
-					 threshold := integer((6.0 * real(dynamic_range) / 10.0)); -- scaling_factor = 60%
+					 threshold := integer(minValue) + integer(8.0 * real(dynamic_range) / 10.0); -- scaling_factor = 80%
 		  end if;
         return threshold;
     end function;
@@ -110,7 +123,7 @@ architecture STRUCT of FPGA_Edge_Detection is
         end loop;
 
         
-        edge_val := integer(sqrt(real(gx_val**2 + gy_val**2))); -- Compute the magnitude of the gradient
+        edge_val := abs(integer(sqrt(real(gx_val**2 + gy_val**2)))); -- Compute the magnitude of the gradient
 
         if edge_val < T then 
             return 0;
@@ -150,6 +163,7 @@ begin
 		  i3 <= 11;
 		  F := 0;
 		  T := compute_threshold(my_matrix);
+		  --T := T + 50;
 				
         if enable = '1' then
             

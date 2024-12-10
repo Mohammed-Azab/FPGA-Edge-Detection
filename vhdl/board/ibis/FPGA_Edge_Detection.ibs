@@ -1,7 +1,7 @@
 [IBIS Ver]   4.2
 [File Name]  FPGA_Edge_Detection.ibs
 [File Rev]   3.0
-[Date]       December 07, 2024
+[Date]       December 10, 2024
 [Source]     Altera Corporation
 [Notes]      - The models are designated as "Final" and have been correlated against physical device operation.
              - This IBIS model is checked using IBISCHK v5.0.4
