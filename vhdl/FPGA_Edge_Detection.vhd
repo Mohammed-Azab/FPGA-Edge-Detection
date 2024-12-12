@@ -188,6 +188,8 @@ begin
                         if (edge_matrix(i, j) = 1) then
                             i0 <= i;
                             i1 <= j;
+									 i2 <= i;
+									 i3 <= j;
 									 F := F + 1;
                         end if;
                     else  
